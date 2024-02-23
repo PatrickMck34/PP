@@ -31,9 +31,9 @@ function Section1 () {
         <div className="flex w-full  scroll-auto flex-col ">
         <h1 className="text-6xl font-serif justify-center flex mt-5">First Step</h1>
         <div className="flex items-center justify-center flex-col ">
-           <button className="bg-teal-600  font-serif shadow-md shadow-slate-400 h-16 w-60 text-2xl p-1 justify-center rounded-2xl mt-5" >Use My Location</button>
-           <button className="bg-teal-600 font-serif shadow-md shadow-slate-400 h-16 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">Organization Code</button>
-           <button className="bg-teal-600 font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">Type a zip code
+           
+           
+           <button className="bg-teal-600 font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">Your zip code
            <input type="text" value={zipCode} onChange={(e) => setZipCode(e.target.value)} className="w-36  p-2  mt-1 border-2 h-8 border-gray-400 " />
            </button>
         {/* {location && <p>{location}</p>} */}
