@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import {Link} from "react-router-dom"
 
 function Submission () {
-const submission = useSelector((state) => state.providerReducer.provider2)
-const zip = useSelector((state) => state.providerReducer.zipCode)
-const name = useSelector((state) => state.providerReducer.name)
-const address = useSelector((state) => state.providerReducer.address)
-const phone = useSelector((state) => state.providerReducer.phone)
+const submission = useSelector((state) => state.provider.provider2)
+const zip = useSelector((state) => state.provider.zipCode)
+const name = useSelector((state) => state.provider.name)
+const address = useSelector((state) => state.provider.address)
+const phone = useSelector((state) => state.provider.phone)
 
 useEffect(() => {
     if(1===1){

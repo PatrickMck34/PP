@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, } from "react-redux";
-import {useNavigate} from "react-router-dom"
+import {useNavigate, Link} from "react-router-dom"
+
 import * as sessionActions from "../../store/session";
 
 function Signup() {
@@ -16,13 +17,15 @@ function Signup() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setErrors([]);
-		return dispatch(
-		  sessionActions.signup({ username, email, password }))
-		//   history.push('/provider'))
+		 return dispatch(sessionActions.signup({ username, email, password })).then(()=>
+		  history('/provider'))
 			  
 			  .catch(async (res) => {
-				  const data = await res.json();
+				  const data = await res.json()
 				  if (data && data.errors) setErrors(data.errors);
+				  else {
+					history.push('/provider')
+				  }
 				
 				
 				
@@ -84,8 +87,9 @@ function Signup() {
                         />
 				</label>
                         </div>
-                        
+                 
 				<button type="submit" className="bg-[rgb(221,163,112)] rounded-xl p-1 border-2 border-amber-800 mt-2 w-36">Sign Up</button>
+			
 			Already a member? <a href="/login" className="bg-[rgb(221,163,112)] rounded-xl p-1 border-2 border-amber-800 mt-2 w-36">Login</a>
 			</form>
 		</>

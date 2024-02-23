@@ -1,5 +1,5 @@
 import React, { useEffect} from 'react'
-import {Link} from "react-router-dom" 
+import {Link, useNavigate} from "react-router-dom" 
 import { CSSTransition } from 'react-transition-group';
 import Provider2 from './provider2.js';
 import Provider from './provider.js';
@@ -10,13 +10,14 @@ import { createProvider } from '../store/provider.js';
 
 
 function ProviderQuestions () {
+  const history = useNavigate()
   const dispatch = useDispatch()
   const [errors, setErrors] = React.useState(["Please fill out required fields"]);
     const [swipe, setSwipe] = React.useState(false);
     const isProviderValid = useSelector(state => state.providerReducer?.provider1)  
     const [selections, setSelections] = React.useState([]);
     const [currentSection, setCurrentSection] = React.useState(1);
-    const provider3 = useSelector(state => state.providerReducer?.provider2)
+    const provider3 = useSelector(state => state.provider?.provider2)
     const address = useSelector(state => state.provider.address)
     const zipCode = useSelector(state => state.provider.zipCode)
     const name = useSelector(state => state.provider.name)
@@ -38,7 +39,8 @@ function ProviderQuestions () {
     }
     const handleSubmit = (e) => {
       e.preventDefault();
-      dispatch(createProvider(provider3));
+      dispatch(createProvider(provider3)) 
+      history('/provider/list')
     }
     useEffect(()=> {
       setErrors([errors])

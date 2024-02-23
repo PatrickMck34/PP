@@ -7,7 +7,7 @@ function Provider3 () {
     const messagesEndRef = useRef(null);
     const [description, setDescription] = useState("")
     const dispatch = useDispatch()
-    const provider2 = useSelector(state => state.providerReducer?.provider)
+    const provider2 = useSelector(state => state.provider.provider)
     const [provider3, setProvider3] = React.useState({ ...provider2,
         confidential: false,
         nonConfidential: false,
