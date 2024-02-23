@@ -48,10 +48,17 @@ function Chat({language}) {
     <div className="flex flex-col rounded-xl  p-3">
       {messages.map((message, index) => (
         <div className="w-full  p-1 flex flex-col text-sm" key={index}>
-          <div className="text-center h-fit bg-teal-300 rounded-xl p-1 font-semibold text-md text-teal-800 ">
+            {(message.sender === "Guest") ? (
+              <div className="mx-auto mr-1 w-fit h-fit bg-blue-400/80 rounded-xl p-2 font-semibold text-md text-right text-teal-900 ">
+                 <span>{message.sender}:</span>
+         
+         <span>{message.text}</span>
+       </div>):(
+                <div className="mx-auto text-left  ml-3 h-fit bg-teal-300 rounded-xl p-1 font-semibold text-md text-teal-800 ">
             <span>{message.sender}:</span>
+         
             <span>{message.text}</span>
-          </div>
+          </div>)}
         </div>
       ))}
       <div ref={messagesEndRef} />
