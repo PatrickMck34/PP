@@ -1,8 +1,10 @@
 import { createStore } from 'redux';
 import { csrfFetch } from './csrf';
+import {useSelector} from "react-redux"
 const CREATE_PROVIDER = "/provider/create"
 const READ_PROVIDERS = "/providers"
 export const createProvider = (provider) => async (dispatch) => {
+  // const Users = useSelector(state => state.session.user.id)
   const { name, address, phone, zipCode,domesticViolence,
     LGBTQ,
     crisisResources,
@@ -17,7 +19,7 @@ export const createProvider = (provider) => async (dispatch) => {
     psychProgram,
     callPolice,
     advocacyProgram  } = provider;
-    const data = await fetch('/provider', {
+    const data = await csrfFetch('/api/provider', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -47,8 +49,8 @@ export const createProvider = (provider) => async (dispatch) => {
     type: 'CREATE_PROVIDER',
     payload: provider,
   })
-  export const getProvider = (spotId) => async (dispatch) => {
-    const data = await csrfFetch(`/providers`)
+  export const getProvider = (userId) => async (dispatch) => {
+    const data = await csrfFetch(`/api/provider`)
         const response = await data.json()
         dispatch(getProviders(response))
         return response
@@ -74,6 +76,7 @@ export const providerReducer=(state = initialState, action)=> {
                 case READ_PROVIDERS:
              
                  newState = { allProvider:{...state.allProvider}}
+                 newState.allProvider[action.payload.provider[0].id] = action.payload
                 return newState
     case 'SET_PROVIDER':
       return { ...state, provider: action.payload };

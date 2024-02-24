@@ -16,7 +16,25 @@ module.exports = (sequelize, DataTypes) => {
   Provider.init({
     Name: DataTypes.STRING,
     Address: DataTypes.STRING,
-    Users: DataTypes.STRING
+    Phone: DataTypes.STRING,
+    zipCode: DataTypes.STRING,
+    Users: DataTypes.STRING,
+    domesticViolence: DataTypes.BOOLEAN,
+        LGBTQ: DataTypes.BOOLEAN,
+        crisisResources: DataTypes.BOOLEAN,
+        humanTrafficking: DataTypes.BOOLEAN,
+        military: DataTypes.BOOLEAN,
+        police: DataTypes.BOOLEAN,
+        maleSurvivor: DataTypes.BOOLEAN,
+        childSurvivor: DataTypes.BOOLEAN,
+        confidential: DataTypes.BOOLEAN,
+        nonConfidential: DataTypes.BOOLEAN,
+        healthCenter: DataTypes.BOOLEAN,
+        dvProgram: DataTypes.BOOLEAN,
+        psychProgram: DataTypes.BOOLEAN,
+        callpolice: DataTypes.BOOLEAN,
+        advocacyProgram: DataTypes.BOOLEAN,
+        
   }, {
     sequelize,
     modelName: 'Provider',

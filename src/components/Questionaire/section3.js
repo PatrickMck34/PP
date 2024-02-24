@@ -67,6 +67,7 @@ function Section3 () {
     return (
         <>
 <h1 className="text-6xl font-serif justify-center flex mt-5">Last Step</h1>
+<span className="text-2xl font-serif justify-center flex mt-5">Resource Type</span>
 <div className="flex justify-center text-2xl mt-5">
     <button className=" bg-teal-400 border-2 border-teal-600 mr-1  font-serif h-20 rounded-xl p-1 w-36" id="con" onClick={confidential}>Confidential</button>
     <button className=" bg-teal-600 h-20 border-2 border-teal-700   font-serif rounded-xl p-1 w-36" id="non" onClick={nonConfidential}>Non-Confidential</button>
