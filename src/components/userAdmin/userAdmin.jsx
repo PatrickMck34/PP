@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
 import {Link} from "react-router-dom"
 function UserAdmin() {
-    const submission = useSelector((state) => state.provider.allProvider)
-const zip = useSelector((state) => state.provider?.zipCode)
+    const submission = useSelector((state) => state.provider[1])
+const zip = useSelector((state) => state.provider[1]?.zipCode)
 const name = useSelector((state) => state.provider?.name)
 const address = useSelector((state) => state.provider?.address)
 const phone = useSelector((state) => state.provider?.phone)

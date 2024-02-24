@@ -70,13 +70,13 @@ export const providerReducer=(state = initialState, action)=> {
   let newState;
   switch (action.type) {
     case CREATE_PROVIDER:
-                 newState = { allProvider:{...state.allProvider}} 
-                newState.allProvider[action.payload.id] = action.payload
+                 newState = { provider:{...state.provider}} 
+                newState.provider[action.payload.id] = action.payload
                 return newState
                 case READ_PROVIDERS:
              
-                 newState = { allProvider:{...state.allProvider}}
-                 newState.allProvider[action.payload.provider[0].id] = action.payload
+                 newState = { ...state, allProvider:{...state.allProvider}}
+                 newState[action.payload.provider[0].id] = action.payload.provider[0]
                 return newState
     case 'SET_PROVIDER':
       return { ...state, provider: action.payload };

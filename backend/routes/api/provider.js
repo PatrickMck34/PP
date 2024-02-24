@@ -89,9 +89,7 @@ router.get("/", async (req, res) => {
    const user = req.params.userId;
   
       const provider = await Provider.findAll({
-        where: {
-          id:1
-        },
+       
        });
   
       return res.json({
