@@ -4,7 +4,8 @@ import { CSSTransition } from 'react-transition-group';
 import Section2 from './section2.js';
 import Section1 from './section1.js';
 import Section3 from './section3.js';
-
+import sunflower from "../../resources/sunflower.png"
+import HelpComponent from '../sunflower/sunflower.jsx';
 
 
 function Questionaire2 () {
@@ -61,7 +62,10 @@ function Questionaire2 () {
               <button onClick={Trans} className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">Next</button>
               </div>
           )}
-          
+             <div className="flex lg:mt-[26%] mt-5 md:ml-12 ">
+
+<HelpComponent currentSection={currentSection}/>
+           </div>
         </div>
       );
     }

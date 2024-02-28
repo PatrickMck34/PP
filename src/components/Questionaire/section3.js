@@ -40,10 +40,8 @@ function Section3 () {
         document.getElementById("psy").style.backgroundColor = "rgb(166,220,220)";
         setSection3({ ...section3, psychProgram: true }); 
     }
-    function callpolice() {
-        document.getElementById("call").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, callpolice: true }); 
-    }
+
+    
     function advocacyProgram() {
         document.getElementById("advocacy").style.backgroundColor = "rgb(166,220,220)";
         setSection3({ ...section3, advocacyProgram: true }); 
@@ -60,6 +58,50 @@ function Section3 () {
         document.getElementById("alt").style.backgroundColor = "rgb(166,220,220)";
         setSection3({ ...section3, altCare: true }); 
     }
+    function immigrants() {
+        document.getElementById("immigrants").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, immigrants: true }); 
+    }
+    
+    function blindDeaf() {
+        document.getElementById("blindDeaf").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, blindDeaf: true }); 
+    }
+    
+    function disabled() {
+        document.getElementById("disabled").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, disabled: true }); 
+    }
+    
+    function directCareCo() {
+        document.getElementById("directCareCo").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, directCareCo: true }); 
+    }
+    
+    function directCareMed() {
+        document.getElementById("directCareMed").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, directCareMed: true }); 
+    }
+    
+    function directCareOther() {
+        document.getElementById("directCareOther").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, directCareOther: true }); 
+    }
+    
+    function substanceAbuse() {
+        document.getElementById("substanceAbuse").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, substanceAbuse: true }); 
+    }
+    
+    function missingPersons() {
+        document.getElementById("missingPersons").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, missingPersons: true }); 
+    }
+    
+    function specialNeeds() {
+        document.getElementById("specialNeeds").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, specialNeeds: true }); 
+    }
     React.useEffect(() => {
         dispatch({ type: 'SET_SECTION3', payload: section3 });
     
@@ -75,19 +117,31 @@ function Section3 () {
 <div className="mt-1 flex justify-center text-2xl">
 <button className=" bg-teal-400 border-2 border-teal-600 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="health" onClick={healthCenter}>Health Center</button>
     <button className=" bg-teal-600 border-2 border-teal-700 h-20 font-serif rounded-xl p-1 w-36" id="dv" onClick={dvProgram}>DV Program</button>
-</div>
-<div className="mt-1 flex justify-center text-2xl">
+
 <button className=" bg-teal-400 border-2 border-teal-600 mr-1 h-20 font-serif  rounded-xl p-1 w-36" id="psy" onClick={psychProgram}>Psych Program</button>
-    <button className=" bg-teal-600  border-2 border-teal-700 h-20 font-serif rounded-xl p-1 w-36" id="call" onClick={callpolice}>Police</button>
+
+
 </div>
 <div className="mt-1 flex justify-center text-2xl">
 
     <button className=" bg-teal-600 border-2 border-teal-700 h-20 font-serif rounded-xl p-1 w-36 text-2xl" id="advocacy" onClick={advocacyProgram}>Advocacy Program</button>
+
 </div>
 <div className="mt-1 flex justify-center text-2xl">
-<button className=" bg-[rgb(221,163,112)] border-2 border-slate-400  font-serif mr-1 h-20 rounded-xl p-1 w-36" id="fact" onClick={factSheet}>Fact Sheet</button>
-    <button className=" bg-[rgb(166,153,120)] border-2 border-slate-400 font-serif  mr-1  h-20 rounded-xl p-1 w-36" id="light" onClick={lightbulb}>Lightbulb</button>
-    <button className=" bg-[rgb(221,163,112)] border-2 border-slate-400 font-serif h-20 rounded-xl p-1 w-36" id="alt" onClick={altCare}>Alt. Care</button>
+
+
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="immigrants" onClick={immigrants}>Immigrants</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="blindDeaf" onClick={blindDeaf}>Blind/Deaf</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="disabled" onClick={disabled}>Disabled</button>
+    
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="directCareCo" onClick={directCareCo}>Direct Care Co</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="directCareMed" onClick={directCareMed}>Direct Care Med</button>
+</div>
+<div className="mt-1 flex justify-center text-2xl">
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="directCareOther" onClick={directCareOther}>Direct Care Other</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="substanceAbuse" onClick={substanceAbuse}>Substance Abuse</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="missingPersons" onClick={missingPersons}>Missing Persons</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="specialNeeds" onClick={specialNeeds}>Special Needs</button>
 </div>
 <div>
     <span className="text-xl font-serif text-center w-fit mx-auto mb-1 bg-zinc-400 justify-center flex mt-5  ">FEW FACTS:
@@ -98,6 +152,12 @@ function Section3 () {
 72 HOURS FOR POST EXPOSURE PROPHYLAXIS
 120 HOURS TO RECIEVE AN EVIDENTARY EXAM
 </p>
+<div className="mt-1 flex justify-center text-2xl">
+
+<button className=" bg-[rgb(221,163,112)] border-2 border-slate-400  font-serif mr-1 h-20 rounded-xl p-1 w-36" id="fact" onClick={factSheet}>Fact Sheet</button>
+    <button className=" bg-[rgb(166,153,120)] border-2 border-slate-400 font-serif  mr-1  h-20 rounded-xl p-1 w-36" id="light" onClick={lightbulb}>Lightbulb</button>
+    <button className=" bg-[rgb(221,163,112)] border-2 border-slate-400 font-serif h-20 rounded-xl p-1 w-36" id="alt" onClick={altCare}>Alt. Care</button>
+</div>
 </div>
 
         

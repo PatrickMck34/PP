@@ -7,6 +7,10 @@ function Provider3 () {
     const messagesEndRef = useRef(null);
     const [description, setDescription] = useState("")
     const dispatch = useDispatch()
+    const zipCode = useSelector(state => state.provider.zipCode)
+    const Name = useSelector(state => state.provider.name)
+    const Address = useSelector(state => state.provider.address) 
+    const Phone = useSelector(state => state.provider.phone)   
     const provider2 = useSelector(state => state.provider.provider)
     const [provider3, setProvider3] = React.useState({ ...provider2,
         confidential: false,
@@ -19,6 +23,10 @@ function Provider3 () {
         factSheet: false,
         lightbulb: false,
         altCare: false,
+        Name: Name,
+        Address: Address, 
+        Phone: Phone,
+        zipCode: zipCode
     })
 
     function confidential() {

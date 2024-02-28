@@ -14,9 +14,9 @@ db = require("../../../backend/config/database");
 router.post("/", restoreUser, async (req, res) => {
     
     const {
-        Name,
-        Address,
-        Phone,
+        name,
+        address,
+        phone,
         zipCode,
         Users,
         domesticViolence,
@@ -36,9 +36,9 @@ router.post("/", restoreUser, async (req, res) => {
         advocacyProgram,
     } = req.body;
     const provider = await Provider.create({
-        Name,
-        Address,
-        Phone,
+        name,
+        address,
+        phone,
         zipCode,
         Users,
         domesticViolence,
@@ -60,9 +60,9 @@ router.post("/", restoreUser, async (req, res) => {
     
     
     providers = {
-        Name,
-        Address,
-        Phone,
+        name,
+        address,
+        phone,
     zipCode,
     Users,
     domesticViolence,
@@ -82,7 +82,7 @@ router.post("/", restoreUser, async (req, res) => {
     advocacyProgram,
 };
 
-return res.status(201).json(provider);
+return res.status(201).json(providers);
 });
 router.get("/", async (req, res) => {
   

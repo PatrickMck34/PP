@@ -6,6 +6,7 @@ import Provider from './provider.js';
 import Provider3 from './provider3.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { createProvider } from '../store/provider.js';
+import * as ProvidersActions from "../store/provider.js"
 
 
 
@@ -22,7 +23,7 @@ function ProviderQuestions () {
     const zipCode = useSelector(state => state.provider.zipCode)
     const name = useSelector(state => state.provider.name)
     const phone = useSelector(state => state.provider.phone)
-   
+    const user = useSelector(state => state.session.user)
     const Trans = () => {
      setErrors([])
       if(address !== '' && phone !== '' && name !== '' && zipCode !== '' && phone.length === 10 && zipCode.length === 5){
@@ -39,13 +40,18 @@ function ProviderQuestions () {
     }
     const handleSubmit = (e) => {
       e.preventDefault();
-      dispatch(createProvider(provider3)) 
+      dispatch(createProvider({provider3, name, address, zipCode, phone})) 
       history('/provider/list')
     }
     useEffect(()=> {
       setErrors([errors])
     }, [])
    
+    React.useEffect(() => {
+      if (user) {
+        dispatch(ProvidersActions.getProvider(user.id))
+      }
+    }, [user])
       return (
         <div >
         

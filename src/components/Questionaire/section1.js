@@ -5,6 +5,7 @@ import {useState} from "react"
 import getZipCode from '../zipcode.js'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
+
 function Section1 () {
     const dispatch = useDispatch()
     const [location, setLocation] = useState(null);
@@ -32,7 +33,6 @@ function Section1 () {
         <h1 className="text-6xl font-serif justify-center flex mt-5">First Step</h1>
         <div className="flex items-center justify-center flex-col ">
            
-           
            <button className="bg-teal-600 font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">Your zip code
            <input type="text" value={zipCode} onChange={(e) => setZipCode(e.target.value)} className="w-36  p-2  mt-1 border-2 h-8 border-gray-400 " />
            </button>
@@ -40,6 +40,7 @@ function Section1 () {
      
            </div>
            </div>
+     
             </>
     )
 }

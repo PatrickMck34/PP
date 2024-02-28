@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
 import {Link} from "react-router-dom"
 function UserAdmin() {
-    const submission = useSelector((state) => state.provider[1])
+    const submission = useSelector((state) => state.provider)
 const zip = useSelector((state) => state.provider[1]?.zipCode)
 const name = useSelector((state) => state.provider?.name)
 const address = useSelector((state) => state.provider?.address)
@@ -39,7 +39,7 @@ const phone = useSelector((state) => state.provider?.phone)
         </div>
         <div className="border-2 h-fit border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
     { <p className="text-2xl justify-center flex items-center">{name}</p>}
-    {address && <p>Address: {address}</p>}
+    {address && <p>Address: {submission.address}</p>}
     {zip && <p>Zip Code: {zip}</p>}
    <span className="bg-teal-600 h-1 w-full mt-5 mb-2"></span>
     <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
