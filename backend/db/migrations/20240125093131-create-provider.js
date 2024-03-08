@@ -4,12 +4,23 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Providers', {
       id: {
-        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
       Name: {
+        type: Sequelize.STRING
+      },
+      Address: {
+        type: Sequelize.STRING
+      },
+      Phone: {
+        type: Sequelize.STRING
+      },
+      zipCode: {
+        type: Sequelize.STRING
+      },
+      Users: {
         type: Sequelize.STRING
       },
       domesticViolence: {
@@ -27,7 +38,10 @@ module.exports = {
       military: {
         type: Sequelize.BOOLEAN
       },
-      police: {
+      lawEnforcement: {
+        type: Sequelize.BOOLEAN
+      },
+      elderSurvivor: {
         type: Sequelize.BOOLEAN
       },
       maleSurvivor: {
@@ -57,24 +71,75 @@ module.exports = {
       advocacyProgram: {
         type: Sequelize.BOOLEAN
       },
-      Phone: {
-        type: Sequelize.STRING
+      legalAdvice: {
+        type: Sequelize.BOOLEAN
       },
-      zipCode: {
-        type: Sequelize.STRING
+      forensicExams: {
+        type: Sequelize.BOOLEAN
       },
-      Address: {
-        type: Sequelize.STRING
+      generalHealth: {
+        type: Sequelize.BOOLEAN
       },
-      Users: {
-        type: Sequelize.STRING
+      pregnancy: {
+        type: Sequelize.BOOLEAN
+      },
+      housing: {
+        type: Sequelize.BOOLEAN
+      },
+      collegeOnCampus: {
+        type: Sequelize.BOOLEAN
+      },
+      title9: {
+        type: Sequelize.BOOLEAN
+      },
+      tribal: {
+        type: Sequelize.BOOLEAN
+      },
+      coalition: {
+        type: Sequelize.BOOLEAN
+      },
+      std: {
+        type: Sequelize.BOOLEAN
+      },
+      hivSupport: {
+        type: Sequelize.BOOLEAN
+      },
+      immigrants: {
+        type: Sequelize.BOOLEAN
+      },
+      blindDeaf: {
+        type: Sequelize.BOOLEAN
+      },
+      disabled: {
+        type: Sequelize.BOOLEAN
+      },
+      directCareCo: {
+        type: Sequelize.BOOLEAN
+      },
+      directCareMed: {
+        type: Sequelize.BOOLEAN
+      },
+      directCareOther: {
+        type: Sequelize.BOOLEAN
+      },
+      substanceAbuse: {
+        type: Sequelize.BOOLEAN
+      },
+      missingPersons: {
+        type: Sequelize.BOOLEAN
+      },
+      specialNeeds: {
+        type: Sequelize.BOOLEAN
+      },
+      alternativeCare: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
-        allowNull: false,
+       
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+       
         type: Sequelize.DATE
       }
     });

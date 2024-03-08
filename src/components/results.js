@@ -1,29 +1,37 @@
 import React, {useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import * as sectionActions from '../store/section'
 
 function Results () {
+    const dispatch = useDispatch()
 const results = useSelector((state) => state.section.section3)
 const zip = useSelector((state) => state.section.zipCode)
+const providers = useSelector((state) => state.provider.providers)
 const res = Object.values(results)
-console.log(results)
+const data = Object.values(providers)
+console.log(data)
 useEffect(() => {
-    if(1===1){
-        console.log("hello")
+    dispatch(sectionActions.getProviders(results))
+        
     
-    }
+    
 }, [results])
     return (
-        <div className="">
-            <h1 className="text-black text-2xl flex justify-center items-center flex-col mt-20 h-36 w-full">
-               {Object.entries(results).map(([key, value]) => {
-                if (value === true) {
-                  return <p key={key}>{key}</p>;
-                }
-                return null;
-              })}
-              {zip}
-           </h1>
+       <>
+          
+      {data.map((provider) => (
+          <div key={provider.id}>
+          <h2 className="text-2xl text-black">{provider.Name}</h2>
+          <h2 className="text-2xl text-black">{provider.Address}</h2>
+          <h2 className="text-2xl text-black">{provider.Phone}</h2>
+          <h2 className="text-2xl text-black">{provider.zipCode}</h2>
+       
         </div>
-    )
-}
-export default Results
+      ))}
+        </>
+   
+        
+        )
+    }
+    export default Results

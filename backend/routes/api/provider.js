@@ -59,7 +59,7 @@ router.post("/", restoreUser, async (req, res) => {
     });
     
     
-    providers = {
+    const providers = {
         name,
         address,
         phone,
@@ -85,17 +85,24 @@ router.post("/", restoreUser, async (req, res) => {
 return res.status(201).json(providers);
 });
 router.get("/", async (req, res) => {
+    // Parse the results from the headers
+    const values = JSON.parse(req.headers['x-results']);
   
-   const user = req.params.userId;
+    // Create a dynamic query object based on the user input
+    const query = {};
+    for (const key in values) {
+      if (values[key] === true) {
+        query[key] = true;
+      }
+    }
   
-      const provider = await Provider.findAll({
-       
-       });
+    // Find all providers that match the query
+    const providers = await Provider.findAll({
+      where: query
+    });
   
-      return res.json({
-        provider
-      });
-    },
+    return res.status(200).json(providers);
+  });
   
-  );
+  
   module.exports = router;
