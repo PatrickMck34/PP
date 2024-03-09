@@ -5,11 +5,11 @@ import * as ProviderActions from "../store/provider.js"
 function Submission () {
     const dispatch= useDispatch()
     const history = useNavigate()
-const submission = useSelector((state) => state.provider.provider2)
-const zip = useSelector((state) => state.provider.zipCode)
-const name = useSelector((state) => state.provider.name)
-const address = useSelector((state) => state.provider.address)
-const phone = useSelector((state) => state.provider.phone)
+const submission = useSelector((state) => state.provider?.provider2)
+const zip = useSelector((state) => state.provider?.zipCode)
+const name = useSelector((state) => state.provider?.name)
+const address = useSelector((state) => state.provider?.address)
+const phone = useSelector((state) => state.provider?.phone)
 
 const handleSubmit=()=> {
 dispatch(ProviderActions.createProvider({submission, name, address, zip, phone})).then(() => history("/"))
