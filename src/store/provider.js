@@ -7,7 +7,7 @@ const SET_PROVIDERS = 'session/SET_PROVIDERS';
 
 export const createProvider = (provider) => async (dispatch) => {
   // const Users = useSelector(state => state.session.user.id)
-  const { name, address, phone, zipCode,domesticViolence,
+  const { Name, Address, City, State,  Phone, zipCode,domesticViolence,
     LGBTQ,
     crisisResources,
     humanTrafficking,
@@ -27,7 +27,7 @@ export const createProvider = (provider) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name, address, phone, zipCode,domesticViolence,
+        Name, Address, City, State, Phone, zipCode,domesticViolence,
         LGBTQ,
         crisisResources,
         humanTrafficking,
