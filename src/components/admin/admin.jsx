@@ -123,7 +123,7 @@ return (
             <h1 className="bg-teal-900  text-pink-50 border-2 rounded p-1 w-full h-5 lg:h-9  lg:text-3xl  items-center justify-center flex border-slate-700">Expertise</h1>
         {Object.entries(searchData).map(([key, value]) => {
             // If the value is true, display the key
-            if (value === true) {
+            if (value === true  && key !== "Approved") {
                 
                 return (
                     <div className="flex flex-col w-1/2  mt-1  md:text-3xl text-lg text-center justify-center items-center   " key={key}>{displayNameMapping[key] || key}
@@ -145,6 +145,8 @@ return (
         </div>
      
       {data?.map((provider) => (
+        <div>
+        {provider.Approved === true && 
           <div key={provider?.id} className="border-2 rounded-xl border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
             <div className="">
                 <div className=" h-fit  border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
@@ -156,11 +158,11 @@ return (
            <div className="flex flex-wrap border-2 rounded-xl border-slate-700 p-1 md:w-full mt-9 bg-gray-100">
             <h1 className="bg-teal-900  text-pink-50 border-2 rounded-xl p-1 w-full h-5 lg:h-9  lg:text-3xl  items-center justify-center flex border-slate-700">Expertise</h1>
             {Object.entries(provider).map(([key, value]) => {
-               // If the value is true, display the key
-               if (value === true) {
-                   
-                   return (
-                       <div className="flex flex-col w-1/2  mt-1  md:text-3xl text-lg text-center justify-center items-center   " key={key}>{displayNameMapping[key] || key}
+                // If the value is true, display the key
+                if (value === true  && key !== "Approved") {
+                    
+                    return (
+                        <div className="flex flex-col w-1/2  mt-1  md:text-3xl text-lg text-center justify-center items-center   " key={key}>{displayNameMapping[key] || key}
            <span className=" bg-black"></span>
              </div>
              )
@@ -172,11 +174,15 @@ return (
                 return null;
             }
         })}
+    
         </div>
        </div>
        </div>
         </div>
+}
+</div>
       ))}
+
     </div>
         </div>
     )
