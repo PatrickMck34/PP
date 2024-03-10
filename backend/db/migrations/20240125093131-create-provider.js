@@ -29,6 +29,9 @@ module.exports = {
       Users: {
         type: Sequelize.STRING
       },
+      Approved: {
+        type: Sequelize.BOOLEAN
+      },
       domesticViolence: {
         type: Sequelize.BOOLEAN
       },

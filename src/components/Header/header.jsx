@@ -10,7 +10,7 @@ function Header () {
     return (
         <div className="flex w-full ml-4">
             <Link to={"/"}>
-            <button className=" flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 p-2  border-2 border-gray-400  bg-teal-800 text-pink-50 justify-center rounded-2xl mt-2"> Home</button>
+            <button className=" flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 p-2  border-2 border-gray-400  bg-teal-600 text-pink-50 justify-center rounded-2xl mt-2"> Home</button>
             </Link>
         </div>
     )

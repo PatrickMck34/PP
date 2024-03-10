@@ -40,6 +40,9 @@ module.exports = (sequelize, DataTypes) => {
     Users: {
       type: DataTypes.STRING
     },
+    Approved: {
+      type: DataTypes.BOOLEAN
+    },
     domesticViolence: {
       type: DataTypes.BOOLEAN
     },

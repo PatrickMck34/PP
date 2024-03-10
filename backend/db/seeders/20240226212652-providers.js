@@ -11,6 +11,7 @@ module.exports = {
       Address:"400 W Congress St # 156",
       Phone:"5207244751",
       zipCode:"85701",
+      Approved: true,
       
 domesticViolence: false,
 LGBTQ: false,
@@ -56,10 +57,13 @@ alternativeCare: false
   Address: "3716 E Columbia St",
   Phone: "8009447611",
   zipCode: "85714",
+  City: "Tucson",
+  State: "AZ",
   childSurvivor: true,
   psychProgram: true,
   advocacyProgram: true,
   directCareCo: true,
+  Approved: true,
   
   }, {
   id: 3,
@@ -96,7 +100,8 @@ coalition: true,
 immigrants: true,
 blindDeaf: true,
 disabled: true,
-directCareCo: true
+directCareCo: true,
+Approved: true,
 },{
   id: 5,
 Name:"Victim Resources ( U of A)",
@@ -113,6 +118,7 @@ std: true,
 hivSupport: true,
 immigrants: true,
 disabled: true,
+Approved: true,
 },{
   id: 6,
   Name:"University Medical Center",
@@ -130,6 +136,7 @@ disabled: true,
   immigrants: true,
   blindDeaf: true,
   disabled: true,
+  Approved: true,
 },{
   id: 7,
   Name:"Theresa Lee Clinic",
@@ -140,6 +147,7 @@ disabled: true,
   pregnancy: true,
   std: true,
   hivSupport: true,
+  Approved: true,
 
 },{
   id: 8,
@@ -156,6 +164,7 @@ disabled: true,
   coalition: true,
   immigrants: true,
   directCareCo: true,
+  Approved: true,
 },{
   id: 9,
   Name:"SAAF- anti violence Program",
@@ -163,6 +172,7 @@ disabled: true,
   Phone:"5206287223",
   zipCode:"85719",
   LGBTQ: true,
+  Approved: true,
 
 }, {
   id: 10,
@@ -173,6 +183,7 @@ disabled: true,
   humanTrafficking: true,
   lawEnforcement: true,
   legalAdvice: true,
+  Approved: true,
 },{
   id: 11,
   Name:"University of Arizona Police Department",
@@ -183,6 +194,7 @@ disabled: true,
   lawEnforcement: true,
   collegeOnCampus: true,
   title9: true,
+  Approved: true,
 }
 
 

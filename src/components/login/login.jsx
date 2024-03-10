@@ -16,7 +16,11 @@ function Login() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setErrors([]);
-		 return dispatch(sessionActions.login({credential, password })).then(()=>
+		if(credential === "admin") {
+		return dispatch(sessionActions.login({credential, password })).then(()=>
+		  history(`/admin/home`))
+		}
+		dispatch(sessionActions.login({credential, password })).then(()=>
 		  history(`/user/admin/${userId}`))
 			  
 			  .catch(async (res) => {

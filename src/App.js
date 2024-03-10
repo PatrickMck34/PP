@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import * as ProvidersActions from "./store/provider.js"
 import * as chatActions from "./store/chatStore.js"
 import { useDispatch } from 'react-redux';
-import { Results, Prolog, Questions2, Header,Admin,  Chat, Submission, Land, ProviderQuestions, Signup } from './imports/importFiles.js';
+import { Results, Prolog, Questions2, Header,Admin, AdminHome, Chat, Submission, Land, ProviderQuestions, Signup } from './imports/importFiles.js';
 export default function App() {
   const user = useSelector(state => state.session.user)
   const dispatch = useDispatch()
@@ -31,8 +31,8 @@ export default function App() {
       <Route path="/help2" element={<Questions2 />}/>
      <Route path="/login" element={<Login />}/> 
      <Route path="/prolog" element={<Prolog />}/>
-     <Route path="/admin" element={<Admin />}/> 
-   
+     <Route path="/admin/listings" element={<Admin />}/> 
+     <Route path="/admin/home" element={<AdminHome />}/>
   
       <Route path="/provider/list" element={<Submission />}/>
       

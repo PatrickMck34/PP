@@ -6,12 +6,17 @@ import FormatPhoneNumber from '../Phone/formatPhone';
 function Admin () {
     const [search, setSearch] = useState("")
     const dispatch = useDispatch()
+    const [searches, setSearches] = useState("")
 const results = useSelector((state) => state.section.section3)
 const zip = useSelector((state) => state.section.zipCode)
 const providers = useSelector((state) => state.section?.allSections)
 const res = Object.values(results)
 let data 
-let searchData
+let company = "hey"
+let local
+let num
+
+let searchData = {}
 if (providers) {
   data = Object.values(providers);
 }
@@ -57,23 +62,26 @@ const displayNameMapping = {
 }
 
 function Search (search) {
-    
+  if (search === "") {
+    return null
+  }
         data.filter((provider) => {
-            
+            company = provider?.Name.toLowerCase()
+            local = provider?.Address.toLowerCase()
+            num = provider?.Phone
             if (provider?.zipCode === search) {
                 searchData = provider
-            } else if (provider?.Name === search) {
+            } else if (company.includes(search.toLowerCase())) {
                 searchData = provider
-            } else if (provider?.Address === search) {
+            } else if (local.includes(search.toLowerCase())) {
                 searchData = provider
-            } else if (provider?.Phone === search) {
+            } else if (num.includes(search)) {
                 searchData = provider
             
             } else if (provider?.zipCode === search) {
                 searchData = provider
-            } else {
-                return null
-            }
+            } 
+            
         
         })
     }
@@ -87,30 +95,51 @@ useEffect(() => {
 
 return (
     <div className="xl:p-4">
+             <div>
+ 
+            
              <input
         type="search"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        placeholder="Search"
-      />
-      <button type="submit" className="bg-teal-700 h-5 w-fit" onClick={Search(search)}> search </button>
-             <div>
- 
-            <div className=" mt-5 h-fit rounded-xl mb-2 border-2 lg:text-5xl border-slate-700 bg-teal-600 w-full mx-auto flex flex-col text-center justify-center text-2xl text-pink-50">
-           Your results
-           
-                </div>
+        placeholder="Search:"
+        className="rounded-xl mt-5 h-fit w-full  border-2 border-slate-700 p-1   justify-center items-center flex bg-gray-100  lg:text-3xl  text-xl"
+        />
                 <div key={searchData?.id} className="border-2 border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
+      <button type="submit" className=" rounded-xl  h-5 w-fit" onClick={Search(search)}> search </button>
             <div className="">
                 <div className=" h-fit  border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
             { <p className="text-3xl font-semibold mb-3 justify-center flex items-center lg:text-4xl text-center">{searchData?.Name}</p>}
             {searchData?.Address && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {searchData?.Address}</p>}
             {searchData?.zipCode && <p className="font-semibold lg:text-2xl text-center mb-1"> { searchData?.zipCode}</p>}
             {searchData?.Phone && <p className="font-semibold text-xl">Phone: {FormatPhoneNumber(searchData?.Phone)}</p>}
+            {searchData.Name && (
+
+                <div className="flex flex-wrap border-2 border-slate-700 p-1 md:w-full mt-9 bg-gray-100">
+            <h1 className="bg-teal-900  text-pink-50 border-2 rounded p-1 w-full h-5 lg:h-9  lg:text-3xl  items-center justify-center flex border-slate-700">Expertise</h1>
+        {Object.entries(searchData).map(([key, value]) => {
+            // If the value is true, display the key
+            if (value === true) {
+                
+                return (
+                    <div className="flex flex-col w-1/2  mt-1  md:text-3xl text-lg text-center justify-center items-center   " key={key}>{displayNameMapping[key] || key}
+       <span className=" bg-black"></span>
          </div>
-         </div>
-         </div>
-      
+         )
+         
+         
+         
+         
+        } else {
+            return null;
+        }
+    })}
+        </div>
+    )}
+       </div>
+       </div>
+        </div>
+     
       {data?.map((provider) => (
           <div key={provider?.id} className="border-2 border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
             <div className="">

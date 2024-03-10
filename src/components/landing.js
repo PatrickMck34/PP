@@ -33,7 +33,7 @@ function Landing() {
   return (
   <>
 <div className="flex justify-center   mx-auto w-full text-2xl">
-  <Link to="/signup">
+  <Link to="/prolog">
   <button className=" mt-2 w-36 h-9 mr-1  border-2 border-teal-700 bg-teal-600  rounded-xl text-center text-pink-50  font-['Jomolhari']">Provider</button>
   </Link>
   <Link to="/help2">
