@@ -4,7 +4,7 @@ import * as sectionActions from "../../store/section"
 import "../results.css"
 import FormatPhoneNumber from '../Phone/formatPhone';
 import {Link} from "react-router-dom"
-function Admin () {
+function AdminApprovals () {
     const [search, setSearch] = useState("")
     const dispatch = useDispatch()
     const [searches, setSearches] = useState("")
@@ -145,6 +145,8 @@ return (
         </div>
      
       {data?.map((provider) => (
+        <div>
+        {provider.Approved === false && 
           <div key={provider?.id} className="border-2 rounded-xl border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
             <div className="">
                 <div className=" h-fit  border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
@@ -175,10 +177,12 @@ return (
         </div>
        </div>
        </div>
-        </div>
-      ))}
+       </div>
+    }
     </div>
-        </div>
+       ))}
+       </div>
+       </div>
     )
 }
-export default Admin
+export default AdminApprovals

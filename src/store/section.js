@@ -32,7 +32,6 @@ export const getAllProviders =()=>  async (dispatch) => {
   if (response.ok) {
     const providers = await response.json();
     dispatch(getAllProvider(providers));
-    console.log(providers)
   } else {
     // Handle error
   }

@@ -20,9 +20,12 @@ function AdminHome() {
             </button>
             </li>
           <li>
+            <Link to="/admin/approvals">
+
           <button className="bg-teal-600 mt-2 rounded-xl p-1 text-pink-50 flex h-fit w-full border-2 border-slate-800">
             View Pending Approvals
             </button>
+            </Link>
             </li>
         </ul>
       </div>

@@ -13,5 +13,6 @@ import Header from '../components/Header/header.jsx';
 import FormatPhoneNumber from '../components/Phone/formatPhone.jsx';
 import Admin from '../components/admin/admin.jsx';
 import AdminHome from '../components/admin/adminHome.jsx';
+import AdminApprovals from '../components/admin/adminApprovals.jsx';
 
-export { Results, Prolog, AdminHome, FormatPhoneNumber, Admin, Geolocation, Header, Questions2, Chat, Provider, Provider2, ProviderQuestions, Submission, Land, Signup }
+export { Results,AdminApprovals,  Prolog, AdminHome, FormatPhoneNumber, Admin, Geolocation, Header, Questions2, Chat, Provider, Provider2, ProviderQuestions, Submission, Land, Signup }

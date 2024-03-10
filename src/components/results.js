@@ -13,6 +13,7 @@ let data
 if (providers) {
   data = Object.values(providers);
 }
+const test = {Approved:false}
 const displayNameMapping = {
     callPolice: 'Law Enforcement',
     advocacyProgram: 'Advocacy',
@@ -85,7 +86,7 @@ return (
             <h1 className="bg-teal-900  text-pink-50 border-2 rounded p-1 w-full h-5 lg:h-9  lg:text-3xl  items-center justify-center flex border-slate-700">Expertise</h1>
            {Object.entries(provider).map(([key, value]) => {
                // If the value is true, display the key
-               if (value === true) {
+               if (value === true && key !== "Approved") {
                    
                    return (
                        <div className="flex flex-col w-1/2  mt-1  md:text-3xl text-lg text-center justify-center items-center   " key={key}>{displayNameMapping[key] || key}
