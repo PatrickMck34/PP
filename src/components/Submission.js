@@ -19,12 +19,14 @@ dispatch(ProviderActions.createProvider({submission, name, address, zip, phone})
     return (
         <div className="">
             <div className=" mt-5 h-fit rounded-xl mb-2 border-2 border-slate-700 bg-teal-600 w-full mx-auto flex flex-col text-center justify-center text-2xl text-pink-50">
-           Your results
+           Your Listing
                 </div>
                 <div className="border-2 h-fit border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
             { <p className="text-2xl justify-center flex items-center">{name}</p>}
-            {address && <p>Address: {address}</p>}
+            {address && <p>Address: {address[0]}</p>}
+             {address[1] + " ," + " " + address[2]} 
             {zip && <p>Zip Code: {zip}</p>}
+            {phone && <p>Phone: {phone}</p>}
            <span className="bg-teal-600 h-1 w-full mt-5 mb-2"></span>
             <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
            <span className="bg-teal-600 mt-2 h-1 w-full"></span>

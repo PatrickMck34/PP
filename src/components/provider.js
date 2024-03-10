@@ -5,6 +5,7 @@ import {Link} from "react-router-dom"
 import {useState} from "react"
 
 import { useDispatch } from 'react-redux'
+import { StartTwoTone } from '@mui/icons-material'
 
 function Provider() {
     
@@ -14,6 +15,8 @@ function Provider() {
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [phone, setPhone] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
     const [isProviderValid, setIsProviderValid] = useState(false);
  function handleNextSection() {
     const isValid = address !== '' && phone !== '' && name !== '' && zipCode !== '';
@@ -28,7 +31,7 @@ function Provider() {
     useEffect(() => {
         dispatch({ type: 'SET_ZIP', payload: zipCode })
         dispatch({ type: 'SET_NAME', payload: name })
-        dispatch({ type: 'SET_ADDRESS', payload: address })
+        dispatch({ type: 'SET_ADDRESS', payload: [address, city, state] })
         dispatch({ type: 'SET_PHONE', payload: phone })
        
     }, [zipCode, name, address, phone])
@@ -46,15 +49,17 @@ function Provider() {
             <span>Name</span>
             <input required className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " type="text" value={name} placeHolder="Name of Company" onChange={(e) => setName(e.target.value)} />
             </div>
-            <div className="bg-teal-600 text-center flex flex-col items-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
+            <div className="bg-teal-600 text-center flex flex-col items-center font-serif shadow-md shadow-slate-400  w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
               
             <span>Address</span>
             <input required className="w-36  p-2 text-sm mt-1 border-2 h-8 border-gray-400 "type="address" value={address} placeHolder="Street Address" onChange={(e) => setAddress(e.target.value)}/>
+            <input required className="w-36  p-2 text-sm mt-1 border-2 h-8 border-gray-400 "type="address" value={city} placeHolder="City" onChange={(e) => setCity(e.target.value)}/>
+            <input required className="w-36  p-2 text-sm mt-1 border-2 h-8 border-gray-400 "type="address" value={state} placeHolder="State" onChange={(e) => setState(e.target.value)}/>
             </div>
             <div className="bg-teal-600 flex  flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
             <span>Phone</span>
             <input required className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " type="phone" value={phone}
-             placeHolder="(###) ###-####" onChange={(e) => setPhone(e.target.value)}  />
+             placeHolder="10-digit Phone#" onChange={(e) => setPhone(e.target.value)}  />
             </div>
             <div className="bg-teal-600 flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
             <span>Zipcode</span>

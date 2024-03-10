@@ -8,5 +8,9 @@ import ProviderQuestions from '../components/ProviderQuestions.js';
 import Submission from '../components/Submission.js';
 import Land from '../components/landing/land.js';
 import Signup from '../components/Signup/signup.js';
+import Prolog from '../components/prolog/prolog.jsx';
+import Header from '../components/Header/header.jsx';
+import FormatPhoneNumber from '../components/Phone/formatPhone.jsx';
+import Admin from '../components/admin/admin.jsx';
 
-export { Results, Geolocation, Questions2, Chat, Provider, Provider2, ProviderQuestions, Submission, Land, Signup }
+export { Results, Prolog, FormatPhoneNumber, Admin, Geolocation, Header, Questions2, Chat, Provider, Provider2, ProviderQuestions, Submission, Land, Signup }

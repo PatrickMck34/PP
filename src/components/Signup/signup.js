@@ -24,17 +24,17 @@ function Signup() {
 				  const data = await res.json()
 				  if (data && data.errors) setErrors(data.errors);
 				  else {
-					history.push('/provider')
-				  }
-				
-				
-				
-			});
-		};
-		
-
-	return (
-		<>
+					  history.push('/provider')
+					}
+					
+					
+					
+				});
+			};
+			
+			
+			return (
+				<>
      
         <div className=" w-full flex items-center justify-center">
 
@@ -42,12 +42,13 @@ function Signup() {
         </div>
 			<h1 className="text-4xl mb-1 w-full flex items-center justify-center mt-4">Join Our List!</h1>
             <span className="text-sm md:text-lg text-center justify-center items-center w-full flex">Join our list of resources and have your company displayed in our search results!</span>
-			<form onSubmit={handleSubmit} className="flex flex-col items-center justify-center text-center rounded border-2 border-slate-600 p-[.5px] bg-teal-600 mt-4 mx-auto md:w-[80%]">
+			<form onSubmit={handleSubmit} className="flex flex-col items-center justify-center text-center rounded-xl border-2 border-slate-600 p-[.5px] bg-gray-200 mt-4 mx-auto md:w-[80%]">
 				<ul>
 					{errors.map((error, idx) => (
 						<li key={idx}>{error}</li>
-					))}
+						))}
 				</ul>
+						
                 <div className="flex flex-col mt-3 bg-teal-400 h-fit p-3 rounded-xl shadow-md shadow-slate-400 border-2 border-slate-800 ">
 
 				<label className="bg-teal-600 mb-1 text-left rounded-xl p-1 text-pink-50 ">
@@ -88,9 +89,8 @@ function Signup() {
 				</label>
                         </div>
                  
-				<button type="submit" className="bg-[rgb(221,163,112)] rounded-xl p-1 border-2 border-amber-800 mt-2 w-36">Sign Up</button>
+				<button type="submit" className="bg-[rgb(221,163,112)] rounded-xl p-1 border-2 border-amber-800 mt-2 w-36">Register</button>
 			
-			Already a member? <a href="/login" className="bg-[rgb(221,163,112)] rounded-xl p-1 border-2 border-amber-800 mt-2 w-36">Login</a>
 			</form>
 		</>
 	);

@@ -104,5 +104,14 @@ router.get("/", async (req, res) => {
     return res.status(200).json(providers);
   });
   
+  router.get("/all", async (req, res) => {
+  
+    const providers = await Provider.findAll({
+     
+    });
+  
+    return res.status(200).json(providers);
+  });
+  
   
   module.exports = router;
