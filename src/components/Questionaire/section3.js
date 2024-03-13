@@ -58,21 +58,12 @@ function Section3 () {
         document.getElementById("alt").style.backgroundColor = "rgb(166,220,220)";
         setSection3({ ...section3, altCare: true }); 
     }
-    function immigrants() {
-        document.getElementById("immigrants").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, immigrants: true }); 
+    function hivSupport() {
+        document.getElementById("hivSupport").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, hivSupport: true }); 
     }
     
-    function blindDeaf() {
-        document.getElementById("blindDeaf").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, blindDeaf: true }); 
-    }
-    
-    function disabled() {
-        document.getElementById("disabled").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, disabled: true }); 
-    }
-    
+ 
     function directCareCo() {
         document.getElementById("directCareCo").style.backgroundColor = "rgb(166,220,220)";
         setSection3({ ...section3, directCareCo: true }); 
@@ -92,16 +83,64 @@ function Section3 () {
         document.getElementById("substanceAbuse").style.backgroundColor = "rgb(166,220,220)";
         setSection3({ ...section3, substanceAbuse: true }); 
     }
+    function legalAdvice() {
+        document.getElementById("legalAdvice").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, legalAdvice: true }); 
+    }
     
+    function forensicExams() {
+        document.getElementById("forensicExams").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, forensicExams: true }); 
+    }
+    
+    function generalHealth() {
+        document.getElementById("generalHealth").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, generalHealth: true }); 
+    }
+    
+    function pregnancy() {
+        document.getElementById("pregnancy").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, pregnancy: true }); 
+    }
+    
+    function housing() {
+        document.getElementById("housing").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, housing: true }); 
+    }
+    
+    function collegeOnCampus() {
+        document.getElementById("collegeOnCampus").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, collegeOnCampus: true }); 
+    }
+    
+    function title9() {
+        document.getElementById("title9").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, title9: true }); 
+    }
+    
+    function tribal() {
+        document.getElementById("tribal").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, tribal: true }); 
+    }
+    
+    function coalition() {
+        document.getElementById("coalition").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, coalition: true }); 
+    }
     function missingPersons() {
         document.getElementById("missingPersons").style.backgroundColor = "rgb(166,220,220)";
         setSection3({ ...section3, missingPersons: true }); 
     }
     
-    function specialNeeds() {
-        document.getElementById("specialNeeds").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, specialNeeds: true }); 
+    function lawEnforcement() {
+        document.getElementById("lawEnforcement").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, lawEnforcement: true }); 
     }
+    function std() {
+        document.getElementById("std").style.backgroundColor = "rgb(166,220,220)";
+        setSection3({ ...section3, std: true }); 
+    }
+    
     React.useEffect(() => {
         dispatch({ type: 'SET_SECTION3', payload: section3 });
     
@@ -123,25 +162,40 @@ function Section3 () {
 
 </div>
 <div className="mt-1 flex justify-center text-2xl">
-
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="std" onClick={std}>STD</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="hivSupport" onClick={hivSupport}>HIV Support</button>
     <button className=" bg-teal-600 border-2 border-teal-700 h-20 font-serif rounded-xl p-1 w-36 text-2xl" id="advocacy" onClick={advocacyProgram}>Advocacy Program</button>
 
 </div>
 <div className="mt-1 flex justify-center text-2xl">
 
 
-<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="immigrants" onClick={immigrants}>Immigrants</button>
-<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="blindDeaf" onClick={blindDeaf}>Blind/Deaf</button>
-<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="disabled" onClick={disabled}>Disabled</button>
+
+
     
 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="directCareCo" onClick={directCareCo}>Direct Care Co</button>
 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="directCareMed" onClick={directCareMed}>Direct Care Med</button>
 </div>
 <div className="mt-1 flex justify-center text-2xl">
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="legalAdvice" onClick={legalAdvice}>Legal Advice</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="forensicExams" onClick={forensicExams}>Forensic Exams</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="generalHealth" onClick={generalHealth}>General Health</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="pregnancy" onClick={pregnancy}>Pregnancy</button>
+        </div>
+        <div className="flex justify-center mt-1 ">
+        <button className=" bg-teal-600 border-2 border-teal-700 shadow-md shadow-slate-400 h-20 font-serif rounded-xl p-1 w-36" id="lawEnforcement" onClick={lawEnforcement}>Law Enforcement</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="housing" onClick={housing}>Housing</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="collegeOnCampus" onClick={collegeOnCampus}>College On Campus</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="title9" onClick={title9}>Title 9</button>
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="tribal" onClick={tribal}>Tribal</button>
+        </div>
+        <div className="flex justify-center mt-1 ">
+<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="coalition" onClick={coalition}>Coalition</button>
+
 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="directCareOther" onClick={directCareOther}>Direct Care Other</button>
 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="substanceAbuse" onClick={substanceAbuse}>Substance Abuse</button>
 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="missingPersons" onClick={missingPersons}>Missing Persons</button>
-<button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="specialNeeds" onClick={specialNeeds}>Special Needs</button>
+
 </div>
 <div>
     <span className="text-xl font-serif text-center w-fit mx-auto mb-1 bg-zinc-400 justify-center flex mt-5  ">FEW FACTS:
