@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import * as ProvidersActions from "./store/provider.js"
 import * as chatActions from "./store/chatStore.js"
 import { useDispatch } from 'react-redux';
-import { Results, Prolog, Questions2, Header,AdminApprovals,Admin, AdminHome, Chat, Submission, Land, ProviderQuestions, Signup } from './imports/importFiles.js';
+import { Results, Prolog, Questions2, HelpBot, Header,AdminApprovals,Admin, AdminHome, Chat, Submission, Land, ProviderQuestions, Signup } from './imports/importFiles.js';
 export default function App() {
   const user = useSelector(state => state.session.user)
   const dispatch = useDispatch()
@@ -41,7 +41,7 @@ export default function App() {
        
     
       <Route path="/results" element={<Results />}/>
-       
+       <Route path='/helper/intro' element={<HelpBot />}/>
   
       <Route path="/start" element={<Landing />}/>
        

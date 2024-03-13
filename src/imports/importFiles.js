@@ -14,5 +14,5 @@ import FormatPhoneNumber from '../components/Phone/formatPhone.jsx';
 import Admin from '../components/admin/admin.jsx';
 import AdminHome from '../components/admin/adminHome.jsx';
 import AdminApprovals from '../components/admin/adminApprovals.jsx';
-
-export { Results,AdminApprovals,  Prolog, AdminHome, FormatPhoneNumber, Admin, Geolocation, Header, Questions2, Chat, Provider, Provider2, ProviderQuestions, Submission, Land, Signup }
+import HelpBot from '../components/HelpBot/helpBot.jsx';
+export { Results,AdminApprovals, HelpBot,  Prolog, AdminHome, FormatPhoneNumber, Admin, Geolocation, Header, Questions2, Chat, Provider, Provider2, ProviderQuestions, Submission, Land, Signup }
