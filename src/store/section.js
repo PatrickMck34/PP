@@ -19,12 +19,12 @@ export const getProviders = (results) => async (dispatch) => {
     // Handle error
   }
 };
-export const getAllProviders =()=>  async (dispatch) => {
+export const getAllProviders = () => async (dispatch) => {
   const response = await fetch('/api/provider/all', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      
+
     },
 
   });
@@ -43,7 +43,7 @@ export const getProvider = (providers) => ({
 export const getAllProvider = (providers) => ({
   type: SET_ALL_PROVIDERS,
   providers,
-  
+
 });
 
 
@@ -53,16 +53,16 @@ const initialState = {
   allSections: {}
 };
 
-export const sectionReducer=(state = initialState, action)=> {
+export const sectionReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_SECTION2':
       return { ...state, section2: action.payload };
     case 'SET_SECTION3':
       return { ...state, section3: action.payload };
-      case 'SET_ZIPCODE':
+    case 'SET_ZIPCODE':
       return { ...state, zipCode: action.payload };
-      case SET_ALL_PROVIDERS:
-        return {...state, allSections: action.providers};
+    case SET_ALL_PROVIDERS:
+      return { ...state, allSections: action.providers };
     default:
       return state;
   }

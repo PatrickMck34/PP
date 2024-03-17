@@ -40,7 +40,7 @@ function AIChatBot() {
 
   return (
     <div>
-     
+
     </div>
   );
 }

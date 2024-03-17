@@ -1,14 +1,14 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import {thunk} from "redux-thunk";
+import { thunk } from "redux-thunk";
 import chatReducer from "./chatStore";
-import  sectionReducer  from "./section";
-import  providerReducer  from "./provider";
+import sectionReducer from "./section";
+import providerReducer from "./provider";
 import sessionReducer from "./session"
 
 const rootReducer = combineReducers({
- chat: chatReducer,
+  chat: chatReducer,
   section: sectionReducer,
-  provider: providerReducer, 
+  provider: providerReducer,
   session: sessionReducer
 });
 

@@ -21,7 +21,7 @@ function ProviderQuestions() {
   const Address = useSelector(state => state.provider?.zipCode?.address)
   const Phone = useSelector(state => state.provider?.zipCode?.phone)
   const ZipCode = useSelector(state => state.provider?.zipCode)
-  const State = useSelector(state => state.provider?.address)  
+  const State = useSelector(state => state.provider?.address)
   const City = useSelector(state => state.provider?.address)
   const provider1 = useSelector(state => state.provider?.provider);
   const provider2 = useSelector(state => state.provider?.provider2);
@@ -73,23 +73,23 @@ function ProviderQuestions() {
     alternativeCare: false,
   });
 
-   
-    const Trans = () => {
-      setErrors([])
-      // if (address !== '' && phone !== '' && name !== '' && zipCode !== '' && phone.length === 10 && zipCode.length === 5) {
-        setCurrentSection(currentSection  + 1);
-        
-        
-        
-        
-      };
 
-      const Results = () => {
+  const Trans = () => {
+    setErrors([])
+    // if (address !== '' && phone !== '' && name !== '' && zipCode !== '' && phone.length === 10 && zipCode.length === 5) {
+    setCurrentSection(currentSection + 1);
+
+
+
+
+  };
+
+  const Results = () => {
 
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    const res = {...{provider1}, ...{ZipCode}}
+    const res = { ...{ provider1 }, ...{ ZipCode } }
     console.log(res)
     console.log(provider1)
     console.log(ZipCode)
@@ -129,7 +129,7 @@ function ProviderQuestions() {
     //   missingPersons,
     //   specialNeeds,
     //   alternativeCare}))
-  
+
     history('/provider/list')
   }
   useEffect(() => {
@@ -143,49 +143,49 @@ function ProviderQuestions() {
   }, [])
   return (
     <ProviderInfoContext.Provider value={info}>
-    <div >
+      <div >
 
-      <div className="relative overflow-hidden h-full w-full">
-        <CSSTransition
-          in={currentSection === 1}
-          timeout={100}
-          classNames="slide"
-          unmountOnExit
-        >
-          <Provider setInfo={info} />
-        </CSSTransition>
+        <div className="relative overflow-hidden h-full w-full">
+          <CSSTransition
+            in={currentSection === 1}
+            timeout={100}
+            classNames="slide"
+            unmountOnExit
+          >
+            <Provider setInfo={info} />
+          </CSSTransition>
 
-        <CSSTransition
-          in={currentSection === 2}
-          timeout={200}
-          classNames="slide"
-          unmountOnExit
-        >
-          <Provider2 setInfo={info} />
-        </CSSTransition>
+          <CSSTransition
+            in={currentSection === 2}
+            timeout={200}
+            classNames="slide"
+            unmountOnExit
+          >
+            <Provider2 setInfo={info} />
+          </CSSTransition>
 
-        <CSSTransition
-          in={currentSection === 3}
-          timeout={100}
-          classNames="slide"
-          unmountOnExit
-        >
-          <Provider3 setInfo={info}/>
-        </CSSTransition>
+          <CSSTransition
+            in={currentSection === 3}
+            timeout={100}
+            classNames="slide"
+            unmountOnExit
+          >
+            <Provider3 setInfo={info} />
+          </CSSTransition>
+        </div>
+        {currentSection === 3 ? (
+          <div>
+            <Link to="/provider/list">
+              <button type="Submit" onClick={handleSubmit} className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl ">Results</button>
+            </Link>
+          </div>
+        ) : (
+          <div>
+            <button onClick={Trans} className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">Next</button>
+          </div>
+        )}
+
       </div>
-      {currentSection === 3 ? (
-        <div>
-          <Link to="/provider/list">
-            <button type="Submit" onClick={handleSubmit} className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl ">Results</button>
-          </Link>
-        </div>
-      ) : (
-        <div>
-          <button onClick={Trans} className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">Next</button>
-        </div>
-      )}
-
-    </div>
     </ProviderInfoContext.Provider>
   );
 }

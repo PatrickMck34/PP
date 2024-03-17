@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom"
 import * as ProviderActions from "../../store/provider.js"
 import * as sectionActions from "../../store/section.js"
+import * as sessionActions from "../../store/session.js"
 function Submission() {
     const dispatch = useDispatch()
     const history = useNavigate()
+    const credential = useSelector((state) => state.session.user.username)
     const submission = useSelector((state) => state.provider?.zipCode)
     const result = useSelector((state) => state.provider?.provider)
     const zipCode = useSelector((state) => state.provider?.zipCode.zipCode)
@@ -14,10 +16,10 @@ function Submission() {
     const Phone = submission.phone
     const City = submission.city
     const State = submission.state
-    const sub = Object.values({...result, ...Name, Address, Phone, City, State, zipCode})
-    const pro = {...result, ...Name, Address, Phone, City, State, zipCode}
+    const sub = Object.values({ ...result, ...Name, Address, Phone, City, State, zipCode })
+    const pro = { ...result, ...Name, Address, Phone, City, State, zipCode }
     let Approved = result.Approved || false
- 
+
     const domesticViolence = result.domesticViolence || false;
     const LGBTQ = result.LGBTQ || false;
     const crisisResources = result.crisisResources || false;
@@ -57,7 +59,8 @@ function Submission() {
     const alternativeCare = result.alternativeCare || false;
     const handleSubmit = (e) => {
         e.preventDefault()
-         dispatch(ProviderActions.createProvider({Name, Address, City, zipCode, Phone, State, Approved,
+        dispatch(ProviderActions.createProvider({
+            Name, Address, City, zipCode, Phone, State, Approved,
             domesticViolence,
             LGBTQ,
             crisisResources,
@@ -94,9 +97,14 @@ function Submission() {
             substanceAbuse,
             missingPersons,
             specialNeeds,
-            alternativeCare})).then(()=>dispatch(sectionActions.getAllProviders()))
-         history("/")
-        
+            alternativeCare
+        })).then(() => dispatch(sectionActions.getAllProviders()))
+        if (credential === "dataEntry") {
+
+            return history(`/provider`)
+        }
+        history("/")
+
         //     Address,
         //     City,
         //     state,
@@ -141,9 +149,9 @@ function Submission() {
         //     missingPersons,
         //     specialNeeds,
         //     alternativeCare})).then(() =>
-    
+
     }
-console.log(result.immigrants)
+    console.log(result.immigrants)
 
     return (
         <div className="">

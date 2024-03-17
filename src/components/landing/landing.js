@@ -47,7 +47,7 @@ function Landing() {
 
         <Chat language={language} />
 
-      
+
       </div>
 
 

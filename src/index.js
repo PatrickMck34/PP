@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
@@ -21,20 +21,20 @@ if (process.env.NODE_ENV !== "production") {
 }
 function Root() {
   return (
- 
-     
- 
-            <Provider store={store}>
-            <App /> 
-      </Provider>
 
-   
-     
- 
+
+
+    <Provider store={store}>
+      <App />
+    </Provider>
+
+
+
+
   );
 
-        
-  }
+
+}
 ReactDOM.render(
   <React.StrictMode>
     <Root />
