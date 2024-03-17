@@ -34,7 +34,7 @@ export const createProvider = (provider) => async (dispatch) => {
     type: 'CREATE_PROVIDER',
     payload: provider,
   })
-  export const updateProvider = ({provider}) => async (dispatch) => {
+  export const updateProvider = (provider) => async (dispatch) => {
     // const Users = useSelector(state => state.session.user.id)
     const {  Name,
       id,
@@ -43,7 +43,6 @@ export const createProvider = (provider) => async (dispatch) => {
       State,
       Phone,
       zipCode,
-      Users,
       Approved,
       domesticViolence,
       LGBTQ,
@@ -52,7 +51,6 @@ export const createProvider = (provider) => async (dispatch) => {
       military,
       lawEnforcement,
       elderSurvivor,
-      maleSurvivor,
       childSurvivor,
       confidential,
       nonConfidential,
@@ -82,7 +80,7 @@ export const createProvider = (provider) => async (dispatch) => {
       missingPersons,
       specialNeeds,
       alternativeCare,  } = provider;
-      const data = await csrfFetch(`/api/provider`, {
+      const data = await csrfFetch(`/api/provider/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

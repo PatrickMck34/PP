@@ -151,6 +151,8 @@ return (
                 <div className=" h-fit  border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
             { <p className="text-3xl font-semibold mb-3 justify-center flex items-center lg:text-4xl text-center">{provider?.Name}</p>}
             {provider?.Address && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.Address}</p>}
+            {provider?.City && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.City}</p>}
+            {provider?.State && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.State}</p>}
             {provider?.zipCode && <p className="font-semibold lg:text-2xl text-center mb-1"> { provider?.zipCode}</p>}
             {provider?.Phone && <p className="font-semibold text-xl">Phone: {FormatPhoneNumber(provider?.Phone)}</p>}
          

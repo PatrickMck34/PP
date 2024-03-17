@@ -106,8 +106,6 @@ router.post("/new", async (req, res) => {
       alternativeCare,
     });
     await provider.save();
-    console.log(provider)
-    console.log("11111111111111")
     
     const providers = {
       Name,

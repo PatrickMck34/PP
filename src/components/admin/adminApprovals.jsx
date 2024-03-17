@@ -24,8 +24,91 @@ if (providers) {
   data = Object.values(providers);
 }
 function Approve (provider) {
-    const pro = {...provider, Approved: true}
-    dispatch(providerActions.updateProvider(pro))
+   provider.Approved = true
+   const id= provider.id
+   const Name = provider.Name
+    const Address = provider.Address
+    const City = provider.City
+    const zipCode = provider.zipCode
+    const Phone = provider.Phone
+    const State = provider.State
+    const Approved = provider.Approved
+   const domesticViolence = provider.domesticViolence || false;
+    const LGBTQ = provider.LGBTQ || false;
+    const crisisResources = provider.crisisResources || false;
+    const humanTrafficking = provider.humanTrafficking || false;
+    const military = provider.military || false;
+    const lawEnforcement = provider.lawEnforcement || false;
+    const elderSurvivor = provider.elderSurvivor || false;
+    const maleSurvivor = provider.maleSurvivor || false;
+    const childSurvivor = provider.childSurvivor || false;
+    const confidential = provider.confidential || false;
+    const nonConfidential = provider.nonConfidential || false;
+    const healthCenter = provider.healthCenter || false;
+    const dvProgram = provider.dvProgram || false;
+    const psychProgram = provider.psychProgram || false;
+    const callpolice = provider.callpolice || false;
+    const advocacyProgram = provider.advocacyProgram || false;
+    const legalAdvice = provider.legalAdvice || false;
+    const forensicExams = provider.forensicExams || false;
+    const generalHealth = provider.generalHealth || false;
+    const pregnancy = provider.pregnancy || false;
+    const housing = provider.housing || false;
+    const collegeOnCampus = provider.collegeOnCampus || false;
+    const title9 = provider.title9 || false;
+    const tribal = provider.tribal || false;
+    const coalition = provider.coalition || false;
+    const std = provider.std || false;
+    const hivSupport = provider.hivSupport || false;
+    const immigrants = provider.immigrants || false;
+    const blindDeaf = provider.blindDeaf || false;
+    const disabled = provider.disabled || false;
+    const directCareCo = provider.directCareCo || false;
+    const directCareMed = provider.directCareMed || false;
+    const directCareOther = provider.directCareOther || false;
+    const substanceAbuse = provider.substanceAbuse || false;
+    const missingPersons = provider.missingPersons || false;
+    const specialNeeds = provider.specialNeeds || false;
+    const alternativeCare = provider.alternativeCare || false;
+    console.log(Name)
+    dispatch(providerActions.updateProvider({id, Name, Address, City, zipCode, Phone, State, Approved,
+        domesticViolence,
+        LGBTQ,
+        crisisResources,
+        humanTrafficking,
+        military,
+        lawEnforcement,
+        elderSurvivor,
+        maleSurvivor,
+        childSurvivor,
+        confidential,
+        nonConfidential,
+        healthCenter,
+        dvProgram,
+        psychProgram,
+        callpolice,
+        advocacyProgram,
+        legalAdvice,
+        forensicExams,
+        generalHealth,
+        pregnancy,
+        housing,
+        collegeOnCampus,
+        title9,
+        tribal,
+        coalition,
+        std,
+        hivSupport,
+        immigrants,
+        blindDeaf,
+        disabled,
+        directCareCo,
+        directCareMed,
+        directCareOther,
+        substanceAbuse,
+        missingPersons,
+        specialNeeds,
+        alternativeCare}))
 
 }
 function Deny(provider) {
@@ -169,11 +252,13 @@ return (
                 <div className=" h-fit  border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
             { <p className="text-3xl font-semibold mb-3 justify-center flex items-center lg:text-4xl text-center">{provider?.Name}</p>}
             {provider?.Address && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.Address}</p>}
+            {provider?.City && <p className="font-semibold lg:text-2xl text-center mb-1 "> {provider?.City +", "+ provider?.State}</p>}
+
             {provider?.zipCode && <p className="font-semibold lg:text-2xl text-center mb-1"> { provider?.zipCode}</p>}
             {provider?.Phone && <p className="font-semibold text-xl">Phone: {FormatPhoneNumber(provider?.Phone)}</p>}
                     <div className="flex flex-row justify-between mt-3 items-center ">
 
-              <button className="text-2xl text-black bg-green-400 rounded-xl mr-4 p-1 border-2 border-slate-700 shadow-sm shadow-slate-400" onClick={()=>Approve(provider, message)}> Approve </button>
+              <button className="text-2xl text-black bg-green-400 rounded-xl mr-4 p-1 border-2 border-slate-700 shadow-sm shadow-slate-400" onClick={()=>Approve(provider)}> Approve </button>
               {isDenyClicked && (
                 <div>
 
