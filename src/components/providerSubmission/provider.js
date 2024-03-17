@@ -29,10 +29,7 @@ function Provider() {
   }
  
     useEffect(() => {
-        dispatch({ type: 'SET_ZIP', payload: zipCode })
-        dispatch({ type: 'SET_NAME', payload: name })
-        dispatch({ type: 'SET_ADDRESS', payload: [address, city, state] })
-        dispatch({ type: 'SET_PHONE', payload: phone })
+        dispatch({ type: 'SET_ZIP', payload: {zipCode: zipCode , address:address , city:city, state:state, phone:phone, name:name} })
        
     }, [zipCode, name, address, phone])
     return (

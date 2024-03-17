@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sectionActions from "../../store/section"
-import "../results.css"
+
 import FormatPhoneNumber from '../Phone/formatPhone';
 import {Link} from "react-router-dom"
+import * as providerActions from "../../store/provider"
 function AdminApprovals () {
+    const [isDenyClicked, setIsDenyClicked] = useState(false);
+    const [message, setMessage] = useState('');
     const [search, setSearch] = useState("")
     const dispatch = useDispatch()
     const [searches, setSearches] = useState("")
@@ -16,11 +19,25 @@ let data
 let company = "hey"
 let local
 let num
-
 let searchData = {}
 if (providers) {
   data = Object.values(providers);
 }
+function Approve (provider) {
+    const pro = {...provider, Approved: true}
+    dispatch(providerActions.updateProvider(pro))
+
+}
+function Deny(provider) {
+    setIsDenyClicked(true);
+    // const pro = { ...provider, Approved: false, Message: message };
+    // dispatch(providerActions.updateProvider(pro));
+  }
+  function Deny2(provider, message) {
+    setIsDenyClicked(true);
+    const pro = { ...provider, Approved: false, Message: message };
+    dispatch(providerActions.updateProvider(pro));
+  }
 const displayNameMapping = {
     callPolice: 'Law Enforcement',
     advocacyProgram: 'Advocacy',
@@ -118,7 +135,7 @@ return (
             {searchData?.zipCode && <p className="font-semibold lg:text-2xl text-center mb-1"> { searchData?.zipCode}</p>}
             {searchData?.Phone && <p className="font-semibold text-xl">Phone: {FormatPhoneNumber(searchData?.Phone)}</p>}
             {searchData.Name && (
-
+                
                 <div className="flex rounded-xl flex-wrap border-2 border-slate-700 p-1 md:w-full mt-9 bg-gray-100">
             <h1 className="bg-teal-900  text-pink-50 border-2 rounded p-1 w-full h-5 lg:h-9  lg:text-3xl  items-center justify-center flex border-slate-700">Expertise</h1>
         {Object.entries(searchData).map(([key, value]) => {
@@ -145,7 +162,7 @@ return (
         </div>
      
       {data?.map((provider) => (
-        <div>
+          <div>
         {provider.Approved === false && 
           <div key={provider?.id} className="border-2 rounded-xl border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
             <div className="">
@@ -154,6 +171,26 @@ return (
             {provider?.Address && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.Address}</p>}
             {provider?.zipCode && <p className="font-semibold lg:text-2xl text-center mb-1"> { provider?.zipCode}</p>}
             {provider?.Phone && <p className="font-semibold text-xl">Phone: {FormatPhoneNumber(provider?.Phone)}</p>}
+                    <div className="flex flex-row justify-between mt-3 items-center ">
+
+              <button className="text-2xl text-black bg-green-400 rounded-xl mr-4 p-1 border-2 border-slate-700 shadow-sm shadow-slate-400" onClick={()=>Approve(provider, message)}> Approve </button>
+              {isDenyClicked && (
+                <div>
+
+                  <input
+                  type="text"
+                  value={message}
+                  onChange={e => setMessage(e.target.value)}
+                  placeholder="Type your message here"
+                  />
+                  <button   className="text-2xl text-black bg-red-400 p-1 ml-6 rounded-xl border-2 border-slate-700 shadow-sm shadow-slate-400" onClick={() => Deny(provider, message)}> Deny</button>
+                  </div>
+                  )}
+                   {!isDenyClicked && (
+
+                  <button   className="text-2xl text-black bg-red-400 p-1 ml-6 rounded-xl border-2 border-slate-700 shadow-sm shadow-slate-400" onClick={() => Deny(provider)}>Deny</button>
+                   )}
+              </div>
          
            <div className="flex flex-wrap border-2 rounded-xl border-slate-700 p-1 md:w-full mt-9 bg-gray-100">
             <h1 className="bg-teal-900  text-pink-50 border-2 rounded-xl p-1 w-full h-5 lg:h-9  lg:text-3xl  items-center justify-center flex border-slate-700">Expertise</h1>

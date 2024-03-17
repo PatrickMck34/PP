@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 function AdminHome() {
   return (
     <div>
-      <h1 className="text-3xl flex items-center justify-center">Welcome Admin</h1>
+      <h1 className="text-3xl flex items-center justify-center mt-6">Welcome Admin</h1>
       <div>
     
         <ul className="text-xl flex items-center justify-center p-4 flex-col text-white">

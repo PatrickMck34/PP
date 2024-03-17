@@ -33,7 +33,7 @@ function HelpComponent({currentSection}) {
         <img 
           src={sunflower} 
           alt="sunflower" 
-          className="h-24 w-24 flex mt-3 "
+          className=" flex mt-3 ml-5 max-h-14"
           onClick={handleImageClick}
           />
       {!showHelp && (

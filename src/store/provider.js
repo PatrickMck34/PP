@@ -4,46 +4,29 @@ import {useSelector} from "react-redux"
 const CREATE_PROVIDER = "/provider/create"
 const READ_PROVIDERS = "/providers"
 const SET_PROVIDERS = 'session/SET_PROVIDERS';
+const UPDATE_PROVIDER = 'session/UPDATE_PROVIDERS';
 
 export const createProvider = (provider) => async (dispatch) => {
   // const Users = useSelector(state => state.session.user.id)
-  const { Name, Address, City, State,  Phone, zipCode,domesticViolence,
-    LGBTQ,
-    crisisResources,
-    humanTrafficking,
-    military,
-    police,
-    maleSurvivor,
-    childSurvivor,confidential,
-    nonConfidential,
-    healthCenter,
-    dvProgram,
-    psychProgram,
-    callPolice,
-    advocacyProgram  } = provider;
-    const data = await csrfFetch('/api/provider', {
+  console.log(provider)
+  if (!provider) {
+    console.error('Provider is undefined or null');
+    return;
+  }
+  const { Name, Address, City, State, Phone, zipCode, Approved, domesticViolence, LGBTQ, crisisResources, humanTrafficking, military, lawEnforcement, elderSurvivor, childSurvivor, confidential, nonConfidential, healthCenter, dvProgram, psychProgram, callpolice, advocacyProgram, legalAdvice, forensicExams, generalHealth, pregnancy, housing, collegeOnCampus, title9, tribal, coalition, std, hivSupport, immigrants, blindDeaf, disabled, directCareCo, directCareMed, directCareOther, substanceAbuse, missingPersons, specialNeeds, alternativeCare } = provider;
+  console.log(Approved)
+ 
+    const data = await csrfFetch('/api/provider/new', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        Name, Address, City, State, Phone, zipCode,domesticViolence,
-        LGBTQ,
-        crisisResources,
-        humanTrafficking,
-        military,
-        police,
-        maleSurvivor,
-        childSurvivor,confidential,
-        nonConfidential,
-        healthCenter,
-        dvProgram,
-        psychProgram,
-        callPolice,
-        advocacyProgram
+        Name, Address, City, State, Phone, zipCode, Approved, domesticViolence, LGBTQ, crisisResources, humanTrafficking, military, lawEnforcement, elderSurvivor, childSurvivor, confidential, nonConfidential, healthCenter, dvProgram, psychProgram, callpolice, advocacyProgram, legalAdvice, forensicExams, generalHealth, pregnancy, housing, collegeOnCampus, title9, tribal, coalition, std, hivSupport, immigrants, blindDeaf, disabled, directCareCo, directCareMed, directCareOther, substanceAbuse, missingPersons, specialNeeds, alternativeCare
       }),
     });
     const response = await data.json();
+    console.log(response)
     dispatch(createProviders(response));
     return response
   }
@@ -51,6 +34,114 @@ export const createProvider = (provider) => async (dispatch) => {
     type: 'CREATE_PROVIDER',
     payload: provider,
   })
+  export const updateProvider = ({provider}) => async (dispatch) => {
+    // const Users = useSelector(state => state.session.user.id)
+    const {  Name,
+      id,
+      Address,
+      City,
+      State,
+      Phone,
+      zipCode,
+      Users,
+      Approved,
+      domesticViolence,
+      LGBTQ,
+      crisisResources,
+      humanTrafficking,
+      military,
+      lawEnforcement,
+      elderSurvivor,
+      maleSurvivor,
+      childSurvivor,
+      confidential,
+      nonConfidential,
+      healthCenter,
+      dvProgram,
+      psychProgram,
+      callpolice,
+      advocacyProgram,
+      legalAdvice,
+      forensicExams,
+      generalHealth,
+      pregnancy,
+      housing,
+      collegeOnCampus,
+      title9,
+      tribal,
+      coalition,
+      std,
+      hivSupport,
+      immigrants,
+      blindDeaf,
+      disabled,
+      directCareCo,
+      directCareMed,
+      directCareOther,
+      substanceAbuse,
+      missingPersons,
+      specialNeeds,
+      alternativeCare,  } = provider;
+      const data = await csrfFetch(`/api/provider`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          Name,
+          id,
+          Address,
+          City,
+          State,
+          Phone,
+          zipCode,
+          Approved,
+          domesticViolence,
+          LGBTQ,
+          crisisResources,
+          humanTrafficking,
+          military,
+          lawEnforcement,
+          elderSurvivor,
+          childSurvivor,
+          confidential,
+          nonConfidential,
+          healthCenter,
+          dvProgram,
+          psychProgram,
+          callpolice,
+          advocacyProgram,
+          legalAdvice,
+          forensicExams,
+          generalHealth,
+          pregnancy,
+          housing,
+          collegeOnCampus,
+          title9,
+          tribal,
+          coalition,
+          std,
+          hivSupport,
+          immigrants,
+          blindDeaf,
+          disabled,
+          directCareCo,
+          directCareMed,
+          directCareOther,
+          substanceAbuse,
+          missingPersons,
+          specialNeeds,
+          alternativeCare,
+        }),
+      });
+      const response = await data.json();
+      dispatch(updateProviders(response));
+      return response
+    }
+    export const updateProviders = (provider) => ({
+      type: 'UPDATE_PROVIDER',
+      payload: provider,
+    })
   export const getProviders = (userId) => async (dispatch) => {
     const response = await fetch(`/api/providers/${userId}`);
   
@@ -79,6 +170,10 @@ export const providerReducer=(state = initialState, action)=> {
                  newState = { provider:{...state.provider}} 
                 newState.provider[action.payload.id] = action.payload
                 return newState
+                case UPDATE_PROVIDER:
+                  newState = { ...state, provider:{...state.provider}} 
+                 newState.provider[action.payload.id] = action.payload
+                 return newState
                 case READ_PROVIDERS:
              
                  newState = { ...state, allProvider:{...state.allProvider}}

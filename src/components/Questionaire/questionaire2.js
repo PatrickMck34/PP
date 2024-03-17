@@ -9,8 +9,7 @@ import HelpComponent from '../sunflower/sunflower.jsx';
 
 
 function Questionaire2 () {
-    const [swipe, setSwipe] = React.useState(false);
-    const [selections, setSelections] = React.useState([]);
+
     const [currentSection, setCurrentSection] = React.useState(1);
 
     const Trans = () => {
@@ -23,6 +22,10 @@ function Questionaire2 () {
    
       return (
         <div>
+
+        <div className="w-full mr-auto flex ">
+<HelpComponent currentSection={currentSection}/>
+        </div>
           <div className="relative overflow-hidden h-full w-full">
             <CSSTransition
               in={currentSection === 1}
@@ -64,7 +67,6 @@ function Questionaire2 () {
           )}
              <div className="flex lg:mt-[26%] mt-5 md:ml-12 ">
 
-<HelpComponent currentSection={currentSection}/>
            </div>
         </div>
       );

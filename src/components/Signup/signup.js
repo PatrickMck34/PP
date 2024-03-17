@@ -17,19 +17,20 @@ function Signup() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setErrors([]);
+		history("/provider")
 		 return dispatch(sessionActions.signup({ username, email, password })).then(()=>
 		  history('/provider'))
 			  
-			  .catch(async (res) => {
-				  const data = await res.json()
-				  if (data && data.errors) setErrors(data.errors);
-				  else {
-					  history.push('/provider')
-					}
+			//   .catch(async (res) => {
+			// 	  const data = await res.json()
+			// 	  if (data && data.errors) setErrors(data.errors);
+			// 	  else {
+			// 		  history('/provider')
+			// 		}
+				
 					
 					
-					
-				});
+				// });
 			};
 			
 			

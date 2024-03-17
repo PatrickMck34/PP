@@ -1,13 +1,13 @@
 
 import {useSelector, useDispatch} from "react-redux"
-import React from 'react'
+import React, {useRef} from 'react'
 import {Link} from "react-router-dom"
 import { useState } from "react"
 
-function Section3 () {
+function Provider3 ({info}) {
     const dispatch = useDispatch()
-    const section2 = useSelector(state => state.section.section2)
-    const [section3, setSection3] = React.useState({ ...section2,
+    const provider2 = useSelector(state => state.provider.provider2)
+    const [provider3, setProvider3] = React.useState({ ...provider2,
         confidential: false,
         nonConfidential: false,
         healthCenter: false,
@@ -19,132 +19,132 @@ function Section3 () {
         lightbulb: false,
         altCare: false,
     })
-
+console.log(info)
     function confidential() {
         document.getElementById("con").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section2, ...section3, confidential: true }); 
+            setProvider3({  ...provider3, confidential: true }); 
     }
     function nonConfidential() {
         document.getElementById("non").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, nonConfidential: true }); 
+            setProvider3({ ...provider3, nonConfidential: true }); 
     }
     function healthCenter() {
         document.getElementById("health").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, healthCenter: true }); 
+            setProvider3({ ...provider3, healthCenter: true }); 
     }
     function dvProgram() {
         document.getElementById("dv").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, dvProgram: true }); 
+            setProvider3({ ...provider3, dvProgram: true }); 
     }
     function psychProgram() {
         document.getElementById("psy").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, psychProgram: true }); 
+            setProvider3({ ...provider3, psychProgram: true }); 
     }
 
     
     function advocacyProgram() {
         document.getElementById("advocacy").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, advocacyProgram: true }); 
+            setProvider3({ ...provider3, advocacyProgram: true }); 
     }
     function factSheet() {
         document.getElementById("fact").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, factSheet: true }); 
+            setProvider3({ ...provider3, factSheet: true }); 
     }
     function lightbulb() {
         document.getElementById("light").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, lightbulb: true }); 
+            setProvider3({ ...provider3, lightbulb: true }); 
     }
     function altCare() {
         document.getElementById("alt").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, altCare: true }); 
+            setProvider3({ ...provider3, altCare: true }); 
     }
     function hivSupport() {
         document.getElementById("hivSupport").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, hivSupport: true }); 
+            setProvider3({ ...provider3, hivSupport: true }); 
     }
     
  
     function directCareCo() {
         document.getElementById("directCareCo").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, directCareCo: true }); 
+            setProvider3({ ...provider3, directCareCo: true }); 
     }
     
     function directCareMed() {
         document.getElementById("directCareMed").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, directCareMed: true }); 
+            setProvider3({ ...provider3, directCareMed: true }); 
     }
     
     function directCareOther() {
         document.getElementById("directCareOther").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, directCareOther: true }); 
+            setProvider3({ ...provider3, directCareOther: true }); 
     }
     
     function substanceAbuse() {
         document.getElementById("substanceAbuse").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, substanceAbuse: true }); 
+            setProvider3({ ...provider3, substanceAbuse: true }); 
     }
     function legalAdvice() {
         document.getElementById("legalAdvice").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, legalAdvice: true }); 
+            setProvider3({ ...provider3, legalAdvice: true }); 
     }
     
     function forensicExams() {
         document.getElementById("forensicExams").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, forensicExams: true }); 
+            setProvider3({ ...provider3, forensicExams: true }); 
     }
     
     function generalHealth() {
         document.getElementById("generalHealth").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, generalHealth: true }); 
+            setProvider3({ ...provider3, generalHealth: true }); 
     }
     
     function pregnancy() {
         document.getElementById("pregnancy").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, pregnancy: true }); 
+            setProvider3({ ...provider3, pregnancy: true }); 
     }
     
     function housing() {
         document.getElementById("housing").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, housing: true }); 
+            setProvider3({ ...provider3, housing: true }); 
     }
     
     function collegeOnCampus() {
         document.getElementById("collegeOnCampus").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, collegeOnCampus: true }); 
+            setProvider3({ ...provider3, collegeOnCampus: true }); 
     }
     
     function title9() {
         document.getElementById("title9").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, title9: true }); 
+            setProvider3({ ...provider3, title9: true }); 
     }
     
     function tribal() {
         document.getElementById("tribal").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, tribal: true }); 
+            setProvider3({ ...provider3, tribal: true }); 
     }
     
     function coalition() {
         document.getElementById("coalition").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, coalition: true }); 
+            setProvider3({ ...provider3, coalition: true }); 
     }
     function missingPersons() {
         document.getElementById("missingPersons").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, missingPersons: true }); 
+            setProvider3({ ...provider3, missingPersons: true }); 
     }
     
     function lawEnforcement() {
         document.getElementById("lawEnforcement").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, lawEnforcement: true }); 
+            setProvider3({ ...provider3, lawEnforcement: true }); 
     }
     function std() {
         document.getElementById("std").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, std: true }); 
+            setProvider3({ ...provider3, std: true }); 
     }
     
     React.useEffect(() => {
-        dispatch({ type: 'SET_SECTION3', payload: section3 });
+        dispatch({ type: 'SET_ALL_PROVIDERS', payload: provider3 });
     
-    }, [section3])
+    }, [provider3])
     return (
         <>
 <h1 className="text-6xl font-serif justify-center flex mt-5">Last Step</h1>
@@ -224,5 +224,8 @@ function Section3 () {
         </>
         )
 }
-export default Section3
+export default Provider3
+
+
+
 
