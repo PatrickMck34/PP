@@ -108,7 +108,7 @@ function Approve (provider) {
         substanceAbuse,
         missingPersons,
         specialNeeds,
-        alternativeCare}))
+        alternativeCare})).then(()=>dispatch(sectionActions.getAllProviders()))
 
 }
 function Deny(provider) {

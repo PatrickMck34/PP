@@ -143,7 +143,7 @@ return (
        </div>
         </div>
      
-      {data?.map((provider) => (
+        {data?.sort((a, b) => (a.Name || '').localeCompare(b.Name || '')).map((provider) => (
         <div>
         {provider.Approved === true && 
           <div key={provider?.id} className="border-2 rounded-xl border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
