@@ -25,7 +25,7 @@
   "scripts": {
     "draw": "node draw.js",
     "render-postbuild": "npm run build",
-    "install": "npm --prefix backend install backend && npm install",
+    "install": "npm --prefix backend install backend",
     "dev:backend": "npm install --prefix backend start",
     "dev:frontend": "npm install start",
     "sequelize": "npm run --prefix backend sequelize",
