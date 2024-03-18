@@ -12,7 +12,7 @@ const { environment } = require('./config');
 const isProduction = environment === 'production';
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8000;
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
