@@ -16,9 +16,9 @@ import AdminHome from '../components/admin/adminHome.jsx';
 import AdminApprovals from '../components/admin/adminApprovals.jsx';
 import HelpBot from '../components/HelpBot/helpBot.jsx';
 import AIChatBot from '../components/chatbot/chatBot.jsx';
+import ProviderHome from '../components/providerHome/providerHome.jsx';
 
 
 
 
-
-export { Results, AdminApprovals, AIChatBot, HelpBot, Prolog, AdminHome, FormatPhoneNumber, Admin, Geolocation, Header, Questions2, Chat, Provider, Provider2, ProviderQuestions, Submission, Land, Signup }
+export { Results, ProviderHome, AdminApprovals, AIChatBot, HelpBot, Prolog, AdminHome, FormatPhoneNumber, Admin, Geolocation, Header, Questions2, Chat, Provider, Provider2, ProviderQuestions, Submission, Land, Signup }

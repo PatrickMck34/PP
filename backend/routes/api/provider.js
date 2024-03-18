@@ -285,5 +285,16 @@ router.get("/", async (req, res) => {
     return res.status(200).json(providers);
   });
   
+  router.delete("/:id", async (req, res) => {
+    const id = req.params.id
+   
+    await Provider.destroy({
+      where: {
+        id: id,
+      },
+    });
+  
+    return res.json({ message: "Successfully Deleted", statusCode: 200 });
+  });
   
   module.exports = router;

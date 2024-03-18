@@ -3,9 +3,9 @@ import { csrfFetch } from './csrf';
 import { useSelector } from "react-redux"
 const CREATE_PROVIDER = "/provider/create"
 const READ_PROVIDERS = "/providers"
-const SET_PROVIDERS = 'session/SET_PROVIDERS';
-const UPDATE_PROVIDER = 'session/UPDATE_PROVIDERS';
-
+const SET_PROVIDERS = '/SET_PROVIDERS';
+const UPDATE_PROVIDER = '/UPDATE_PROVIDERS';
+const DELETE_PROVIDER = '/DELETE_PROVIDERS';
 export const createProvider = (provider) => async (dispatch) => {
   // const Users = useSelector(state => state.session.user.id)
   console.log(provider)
@@ -154,6 +154,25 @@ export const getProvider = (providers) => ({
   type: SET_PROVIDERS,
   providers,
 });
+export const deleteProvider = (id) => async (dispatch) => {
+  const response = await csrfFetch(`/api/provider/${id}`, {
+    method: 'DELETE',
+  });
+  body: JSON.stringify({
+    id})
+
+  if (response.ok) {
+    const provider = await response.json();
+    dispatch(deleteProviders(provider));
+  } else {
+    // Handle error
+  }
+
+}
+export const deleteProviders = (provider) => ({
+  type: 'DELETE_PROVIDER',
+  payload: provider,
+})
 
 const initialState = {
   allProvider: {},
@@ -164,6 +183,8 @@ const initialState = {
 export const providerReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
+    case DELETE_PROVIDER:
+      return state
     case CREATE_PROVIDER:
       newState = { provider: { ...state.provider } }
       newState.provider[action.payload.id] = action.payload

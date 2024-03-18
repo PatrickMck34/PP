@@ -291,6 +291,7 @@ function AdminApprovals() {
                                                     return (
                                                         <div className="flex flex-col w-1/2  mt-1  md:text-3xl text-lg text-center justify-center items-center   " key={key}>{displayNameMapping[key] || key}
                                                             <span className=" bg-black"></span>
+                                                
                                                         </div>
                                                     )
 

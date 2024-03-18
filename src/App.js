@@ -10,7 +10,7 @@ import * as ProvidersActions from "./store/provider.js"
 import * as chatActions from "./store/chatStore.js"
 import { useDispatch } from 'react-redux';
 import Footer from './components/footer/footer.js';
-import { Results, Prolog, Questions2, HelpBot, Header, AdminApprovals, Admin, AdminHome, Chat, Submission, Land, ProviderQuestions, Signup } from './imports/importFiles.js';
+import { Results, ProviderHome,  Prolog, Questions2, HelpBot, Header, AdminApprovals, Admin, AdminHome, Chat, Submission, Land, ProviderQuestions, Signup } from './imports/importFiles.js';
 export default function App() {
   const [timeLeft, setTimeLeft] = useState(500); // Time left in seconds
   const [isExtended, setIsExtended] = useState(false);

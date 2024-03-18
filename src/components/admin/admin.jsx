@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as sectionActions from "../../store/section"
 import FormatPhoneNumber from '../Phone/formatPhone';
 import { Link } from "react-router-dom"
+import * as providerActions from "../../store/provider"
 function Admin() {
     const [search, setSearch] = useState("")
     const dispatch = useDispatch()
@@ -11,7 +12,7 @@ function Admin() {
     const zip = useSelector((state) => state.section.zipCode)
     const providers = useSelector((state) => state.section?.allSections)
     const res = Object.values(results)
-    let data
+    let data = Object.values(providers);
     let company = "hey"
     let local
     let num
@@ -61,30 +62,31 @@ function Admin() {
 
     }
 
-    function Search(search) {
-        if (search === "") {
-            return null
-        }
-        data.filter((provider) => {
-            company = provider?.Name.toLowerCase()
-            local = provider?.Address.toLowerCase()
-            num = provider?.Phone
-            if (provider?.zipCode === search) {
-                searchData = provider
-            } else if (company.includes(search.toLowerCase())) {
-                searchData = provider
-            } else if (local.includes(search.toLowerCase())) {
-                searchData = provider
-            } else if (num.includes(search)) {
-                searchData = provider
+  function Search(search) {
+    if (!search) {
+        return null;
+    }
 
-            } else if (provider?.zipCode === search) {
+    // Convert search to lower case
+    const lowerCaseSearch = search.toLowerCase();
+
+    // Filter data and return an array of matching providers
+ data.filter((provider) => {
+        const company = provider?.Name?.toLowerCase() || '';
+        const local = provider?.Address?.toLowerCase() || '';
+        const num = provider?.Phone || '';
+
+        if( provider?.zipCode === search ||
+            company.includes(lowerCaseSearch) ||
+            local.includes(lowerCaseSearch) ||
+            num.includes(search)) {
                 searchData = provider
             }
 
+    });
 
-        })
-    }
+    return searchData;
+}
 
 
     useEffect(() => {
@@ -92,6 +94,10 @@ function Admin() {
 
 
     }, [])
+    function Delete (id) {
+        console.log(id)
+        dispatch(providerActions.deleteProvider(id)).then(() => dispatch(sectionActions.getAllProviders()))
+    }
 
     return (
         <div className="xl:p-4">
@@ -161,22 +167,23 @@ function Admin() {
                                             {Object.entries(provider).map(([key, value]) => {
                                                 // If the value is true, display the key
                                                 if (value === true && key !== "Approved") {
-
+                                                    
                                                     return (
                                                         <div className="flex flex-col w-1/2  mt-1  md:text-3xl text-lg text-center justify-center items-center   " key={key}>{displayNameMapping[key] || key}
                                                             <span className=" bg-black"></span>
                                                         </div>
                                                     )
-
-
-
-
+                                                    
+                                                    
+                                                    
+                                                    
                                                 } else {
                                                     return null;
                                                 }
                                             })}
 
                                         </div>
+                                                    <button className="text-2xl text-slate-800 rounded-xl p-1 mt-2 border-2 border-slate-600 shadow-sm shadow-slate-500 bg-red-500" onClick={()=>Delete(provider.id)}>Delete</button>
                                     </div>
                                 </div>
                             </div>
