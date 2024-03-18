@@ -2,9 +2,9 @@ import { createStore } from 'redux';
 import { csrfFetch } from './csrf';
 import { useSelector } from "react-redux"
 const CREATE_PROVIDER = "/provider/create"
-const READ_PROVIDERS = "/providers"
-const SET_PROVIDERS = '/SET_PROVIDERS';
-const UPDATE_PROVIDER = '/UPDATE_PROVIDERS';
+const READ_PROVIDERS = "session/providers"
+const SET_PROVIDERS = 'session/SET_PROVIDERS';
+const UPDATE_PROVIDER = 'session/UPDATE_PROVIDERS';
 const DELETE_PROVIDER = '/DELETE_PROVIDERS';
 export const createProvider = (provider) => async (dispatch) => {
   // const Users = useSelector(state => state.session.user.id)
@@ -141,7 +141,7 @@ export const updateProviders = (provider) => ({
   payload: provider,
 })
 export const getProviders = (userId) => async (dispatch) => {
-  const response = await fetch(`/api/providers/${userId}`);
+  const response = await fetch(`/api/providers/`);
 
   if (response.ok) {
     const providers = await response.json();

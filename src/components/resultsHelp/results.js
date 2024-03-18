@@ -4,11 +4,11 @@ import * as sectionActions from '../../store/section'
 import FormatPhoneNumber from '../Phone/formatPhone';
 function Results() {
     const dispatch = useDispatch()
-    const results = useSelector((state) => state.section.section3)
+    const results = useSelector((state) => state.section.section2)
     const zip = useSelector((state) => state.section.zipCode)
     const providers = useSelector((state) => state.provider?.providers)
     const res = Object.values(results)
-    let data
+    let data 
     if (providers) {
         data = Object.values(providers);
     }
@@ -72,7 +72,7 @@ function Results() {
 
                 </div>
 
-                {data?.map((provider) => (
+                {providers?.map((provider) => (
                     <div key={provider?.id}>
                         {provider.Approved === true &&
                             <div className="border-2 border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
