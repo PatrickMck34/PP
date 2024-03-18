@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -38,5 +38,6 @@
     "dotenv-cli": "^6.0.0",
     "nodemon": "^2.0.20",
     "sqlite3": "^5.1.2"
-  }
+  },
+  "proxy": "http://localhost:4242"
 }
