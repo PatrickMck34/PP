@@ -24,10 +24,10 @@
   },
   "scripts": {
     "draw": "node draw.js",
-    "render-postbuild": "npm run build --prefix source",
-    "install": "npm --prefix backend install backend && npm --prefix source install frontend",
+    "render-postbuild": "npm run build",
+    "install": "npm --prefix backend install backend && npm install frontend",
     "dev:backend": "npm install --prefix backend start",
-    "dev:frontend": "npm install --prefix source start",
+    "dev:frontend": "npm install start",
     "sequelize": "npm run --prefix backend sequelize",
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
     "start": "react-scripts --openssl-legacy-provider start",
