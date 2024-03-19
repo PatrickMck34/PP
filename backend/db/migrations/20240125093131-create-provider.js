@@ -159,6 +159,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Providers');
+    await queryInterface.dropTable(options);
   }
 };
