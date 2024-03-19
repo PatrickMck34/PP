@@ -5,7 +5,7 @@ module.exports = {
   // Your code here
   
   async up (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Providers', [{
+    return queryInterface.bulkInsert('Provider', [{
       id: 1,
       Name:"Arizona Department of Juvenile Corrections",
       Address:"400 W Congress St # 156",
@@ -216,7 +216,7 @@ Approved: true,
   
   },
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("Providers", null, {});
+    await queryInterface.bulkDelete("Provider", null, {});
   }
 //   async down (queryInterface, Sequelize) {
 //     /**
