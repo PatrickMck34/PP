@@ -9,7 +9,7 @@ module.exports = {
   // Your code here
   
   async up (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Provider', [{
+    return queryInterface.bulkInsert(options, [{
       id: 1,
       Name:"Arizona Department of Juvenile Corrections",
       Address:"400 W Congress St # 156",
