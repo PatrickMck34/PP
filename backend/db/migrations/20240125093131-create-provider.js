@@ -7,7 +7,7 @@ options.tableName = "Providers"
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Providers', {
+    await queryInterface.createTable(options, {
       id: {
         autoIncrement: true,
         primaryKey: true,
