@@ -6,7 +6,7 @@ function Prolog() {
     const history = useNavigate()
     const user = useSelector(state => state.session.user)
     useEffect(() => {
-        if (user.username === "dataEntry") {
+        if (user?.username === "dataEntry") {
             history(`/provider`)
       
           }
