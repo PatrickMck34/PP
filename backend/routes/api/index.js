@@ -24,28 +24,28 @@ router.use('/bookings', bookingsRouter)
 router.post('/test', (req, res) => {
   res.json({ requestBody: req.body });
 });
-// router.get(
-  //   '/restore-user',
-//   (req, res) => {
-//     return res.json(req.user);
-//   }
-// );
-// router.get('/set-token-cookie', async (_req, res) => {
-//   const user = await User.findOne({
-//       where: {
-//         username: 'Demo-lition'
-//       }
-//     });
-//   setTokenCookie(res, user);
-//   return res.json({ user });
-// });
-// router.get(
-//   '/require-auth',
-//   requireAuth,
-//   (req, res) => {
-//     return res.json(req.user);
-//   }
-// );
+router.get(
+    '/restore-user',
+  (req, res) => {
+    return res.json(req.user);
+  }
+);
+router.get('/set-token-cookie', async (_req, res) => {
+  const user = await User.findOne({
+      where: {
+        username: 'Demo-lition'
+      }
+    });
+  setTokenCookie(res, user);
+  return res.json({ user });
+});
+router.get(
+  '/require-auth',
+  requireAuth,
+  (req, res) => {
+    return res.json(req.user);
+  }
+);
 // // Connect restoreUser middleware to the API router
 //   // If current user session is valid, set req.user to the user in the database
 //   // If current user session is not valid, set req.user to null
