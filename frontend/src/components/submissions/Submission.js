@@ -1,9 +1,9 @@
-import React, { useEffect, usestate } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom"
 import * as ProviderActions from "../../store/provider.js"
 import * as sectionActions from "../../store/section.js"
-import * as sessionActions from "../../store/session.js"
+
 function Submission() {
     const dispatch = useDispatch()
     const history = useNavigate()
@@ -60,7 +60,7 @@ function Submission() {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(ProviderActions.createProvider({
-            Name, Address, City, zipCode, Phone, State, Approved,
+           Name, Address, City, zipCode, Phone, State, Approved,
             domesticViolence,
             LGBTQ,
             crisisResources,
@@ -104,51 +104,6 @@ function Submission() {
             return history(`/provider`)
         }
         history("/")
-
-        //     Address,
-        //     City,
-        //     state,
-        //     Phone,
-        //     zipCodeCode,
-        //     Users,
-        //     Approved,
-        //     domesticViolence,
-        //     LGBTQ,
-        //     crisisResources,
-        //     humanTrafficking,
-        //     military,
-        //     lawEnforcement,
-        //     elderSurvivor,
-        //     maleSurvivor,
-        //     childSurvivor,
-        //     confidential,
-        //     nonConfidential,
-        //     healthCenter,
-        //     dvProgram,
-        //     psychProgram,
-        //     callpolice,
-        //     advocacyProgram,
-        //     legalAdvice,
-        //     forensicExams,
-        //     generalHealth,
-        //     pregnancy,
-        //     housing,
-        //     collegeOnCampus,
-        //     title9,
-        //     tribal,
-        //     coalition,
-        //     std,
-        //     hivSupport,
-        //     immigrants,
-        //     blindDeaf,
-        //     disabled,
-        //     directCareCo,
-        //     directCareMed,
-        //     directCareOther,
-        //     substanceAbuse,
-        //     missingPersons,
-        //     specialNeeds,
-        //     alternativeCare})).then(() =>
 
     }
     console.log(result.immigrants)

@@ -28,12 +28,12 @@ function ProviderQuestions() {
   const provider3 = useSelector(state => state.provider?.provider2);
   // const combinedData = { ...provider1, ...provider2, ...provider3, ...Address,...Name,...Phone,...ZipCode,...State,...City}; 
   const [info, setInfo] = React.useState({
-    Name: false,
-    Address: false,
-    City: false,
-    State: false,
-    Phone: false,
-    // zipCode: false,
+    Name: "",
+    Address: "",
+    City: "",
+    State: "",
+    Phone: "",
+    zipCode: "",
     Approved: false,
     domesticViolence: false,
     LGBTQ: false,
@@ -90,9 +90,6 @@ function ProviderQuestions() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const res = { ...{ provider1 }, ...{ ZipCode } }
-    console.log(res)
-    console.log(provider1)
-    console.log(ZipCode)
     // dispatch(createProvider({provider1}))
     //   LGBTQ,
     //   crisisResources,

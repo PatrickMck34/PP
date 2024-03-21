@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-const reviewsRouter = require('./reviews.js')
-const spotImagesRouter = require('./spot-images.js')
-const bookingsRouter = require('./bookings.js')
-const reviewImagesRouter = require('./review-images.js')
+const reviewsRouter = require('../../../misc/reviews.js')
+const spotImagesRouter = require('../../../misc/spot-images.js')
+const bookingsRouter = require('../../../misc/bookings.js')
+const reviewImagesRouter = require('../../../misc/review-images.js')
 const providerRouter = require('./provider.js')
 const { requireAuth } = require('../../utils/auth.js');
 
-const spotsRouter = require('./spots.js')
+const spotsRouter = require('../../../misc/spots.js')
 router.get('/test', requireAuth, (req, res) => {
   res.json[{ message: 'success' }]
 })

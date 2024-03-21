@@ -21,16 +21,7 @@ function Signup() {
 		return dispatch(sessionActions.signup({ username, email, password })).then(() =>
 			history('/provider'))
 
-		//   .catch(async (res) => {
-		// 	  const data = await res.json()
-		// 	  if (data && data.errors) setErrors(data.errors);
-		// 	  else {
-		// 		  history('/provider')
-		// 		}
 
-
-
-		// });
 	};
 
 

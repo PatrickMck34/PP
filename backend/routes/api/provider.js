@@ -16,6 +16,7 @@ router.post("/new", async (req, res) => {
 
   const {
     Name,
+    Users,
     Address,
     City,
     State,
@@ -62,6 +63,7 @@ router.post("/new", async (req, res) => {
   console.log(req.body)
   const provider = await Provider.create({
     Name,
+    Users,
     Address,
     City,
     State,
