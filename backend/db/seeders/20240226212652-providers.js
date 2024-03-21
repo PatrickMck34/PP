@@ -10,7 +10,6 @@ module.exports = {
   
   async up (queryInterface, Sequelize) {
     return queryInterface.bulkInsert(options, [{
-      id: 1,
       Name:"Arizona Department of Juvenile Corrections",
       Address:"400 W Congress St # 156",
       Phone:"5207244751",
@@ -56,7 +55,6 @@ specialNeeds: false,
 alternativeCare: false
 
 }, {
-  id: 2,
   Name: "Arizona Children's Association",
   Address: "3716 E Columbia St",
   Phone: "8009447611",
@@ -70,7 +68,6 @@ alternativeCare: false
   Approved: true,
   
   }, {
-  id: 3,
   Name: "Tucson Medical Health Center",
   Address: "5301 E Grant Rd",
   Phone: "5203275461",
@@ -85,7 +82,6 @@ alternativeCare: false
   hivSupport: true,
   directCareMed: true,
   },{
-id: 4,
 Name:"SACASA",
 Address:"1600 N Country Club Rd",
 Phone:"5203271171",
@@ -107,7 +103,6 @@ disabled: true,
 directCareCo: true,
 Approved: false,
 },{
-  id: 5,
 Name:"Victim Resources ( U of A)",
 Address:"1224 E Lowell St",
 Phone:"5206215767",
@@ -124,7 +119,6 @@ immigrants: true,
 disabled: true,
 Approved: true,
 },{
-  id: 6,
   Name:"University Medical Center",
   Address:"1625 N. Campbell Ave.",
   Phone:"5206940111",
@@ -142,7 +136,6 @@ Approved: true,
   disabled: true,
   Approved: true,
 },{
-  id: 7,
   Name:"Theresa Lee Clinic",
   Address:"1493 W Commerce Ct",
   Phone:"5207243995",
@@ -154,7 +147,6 @@ Approved: true,
   Approved: true,
 
 },{
-  id: 8,
   Name:"Emerge",
   Address:"2545 E Adams St",
   Phone:"5207954266",
@@ -170,7 +162,6 @@ Approved: true,
   directCareCo: true,
   Approved: true,
 },{
-  id: 9,
   Name:"SAAF- anti violence Program",
   Address:"375 S Euclid Ave Tucson",
   Phone:"5206287223",
@@ -179,7 +170,6 @@ Approved: true,
   Approved: true,
 
 }, {
-  id: 10,
   Name:"Tucson Police Department",
   Address:"270 S Stone Ave",
   Phone:"5207915032",
@@ -189,7 +179,6 @@ Approved: true,
   legalAdvice: true,
   Approved: true,
 },{
-  id: 11,
   Name:"University of Arizona Police Department",
   Address:"1852 E 1st St, Tucson",
   Phone:"5206218273",
