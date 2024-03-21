@@ -16,9 +16,9 @@ function UserAdmin() {
         {<p className="text-2xl justify-center flex items-center">{name}</p>}
         {address && <p>Address: {address}</p>}
         {zip && <p>Zip Code: {zip}</p>}
-        <span className="bg-teal-600 h-1 w-full mt-5 mb-2"></span>
+     
         <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
-        <span className="bg-teal-600 mt-2 h-1 w-full"></span>
+    
 
         <span className="text-black  flex-col grid grid-cols-2
      w-full">
@@ -41,9 +41,9 @@ function UserAdmin() {
         {<p className="text-2xl justify-center flex items-center">{name}</p>}
         {address && <p>Address: {submission.address}</p>}
         {zip && <p>Zip Code: {zip}</p>}
-        <span className="bg-teal-600 h-1 w-full mt-5 mb-2"></span>
+     
         <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
-        <span className="bg-teal-600 mt-2 h-1 w-full"></span>
+      
 
         <span className="text-black  flex-col grid grid-cols-2
      w-full">
@@ -61,7 +61,10 @@ function UserAdmin() {
 
           <button className="bg-teal-600 border-2 border-slate-600 shadow-md shadow-slate-600 rounded-xl p-1 mt-5 text-pink-50">Go Back</button>
         </Link>
+        <Link to="/provider">
+
         <button className="bg-teal-600 border-2 border-slate-600 shadow-md shadow-slate-600 rounded-xl p-1 mt-5 ml-5 text-pink-50">Submit A Provider</button>
+        </Link>
       </div>
     </div>
 

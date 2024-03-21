@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from "react-router-dom"
 import { HomeIcon } from '@heroicons/react/solid';
+import {useSelector} from 'react-redux'
 function Header() {
   const [timeLeft, setTimeLeft] = useState(300); // Time left in seconds
   const [isExtended, setIsExtended] = useState(false);
   const timer = useRef(null);
-
+const user = useSelector(state => state.session.user)
   const resetTimer = () => {
     if (timer.current) {
       clearTimeout(timer.current);
@@ -22,7 +23,7 @@ function Header() {
   }
   const extendTimeout = () => {
     setIsExtended(true);
-    setTimeLeft(300);
+    setTimeLeft(timeLeft * 10);
   };
 
   useEffect(() => {
@@ -48,7 +49,7 @@ function Header() {
   const location = useLocation();
 
   // Don't render the header on the /excludePage route
-  if (location.pathname === '/' || location.pathname === '/start' || location.pathname === '/admin/home' || location.pathname === '/admin/approvals') {
+  if (location.pathname === '/' || location.pathname === '/start' || location.pathname === '/admin/home' || location.pathname === '/admin/approvals' ||location.pathname.includes('/user/admin/')) {
     return null;
   }
   return (
@@ -56,7 +57,7 @@ function Header() {
       <div className="flex flex-row w-full items-center justify-center  ">
 
         <Link to={"/"}>
-          <HomeIcon className="h-8 w-8 2xl:h-24 2xl:w-24 lg:h-12 lg:w-12 border-2 border-teal-300 ml-[-25em] shadow-md shadow-slate-600 text-teal-400 bg-blue-100 rounded-xl xl:text-xl" />
+          <HomeIcon className="h-8 w-8 2xl:h-24 2xl:w-24 lg:h-12 lg:w-12 border-2 border-teal-300 xl:ml-[-25em] lg:ml-[-10%]  shadow-md shadow-slate-600 text-teal-400 bg-blue-100 rounded-xl xl:text-xl" />
           {/* <button className=" flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 p-2  border-2 border-gray-400  bg-teal-600 text-pink-50 justify-center rounded-2xl text-sm mt-2"> Home</button> */}
         </Link>
         <div className="flex ml-5 text-sm xl:text-2xl 2xl:text-5xl">
