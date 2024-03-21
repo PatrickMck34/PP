@@ -1,8 +1,8 @@
 const express = require('express')
-const { Bookings, Reviews, Spot, User, ReviewImages } = require('../backend/db/models');
+const { Bookings, Reviews, Spot, User, ReviewImages } = require('../../db/models');
 const router = express.Router();
-const { setTokenCookie, restoreUser } = require('../backend/utils/auth');
-db = require('../backend/config/database')
+const { setTokenCookie, restoreUser } = require('../../utils/auth');
+db = require('../../config/database')
 
 router.get('/current', restoreUser, async (req, res) => {
     const currentUser = User.currentUserId(req, res)

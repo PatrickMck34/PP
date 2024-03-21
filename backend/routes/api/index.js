@@ -9,8 +9,8 @@ const providerRouter = require('./provider.js')
 const { requireAuth } = require('../../utils/auth.js');
 
 const spotsRouter = require('./spots.js')
-router.get('/test', requireAuth, (req, res) => {
-  res.json[{ message: 'success' }]
+router.get('/test', requireAuth, (req, res)=>{
+  res.json[{message: 'success'}]
 })
 
 router.use('/session', sessionRouter);
@@ -25,7 +25,7 @@ router.post('/test', (req, res) => {
   res.json({ requestBody: req.body });
 });
 // router.get(
-//   '/restore-user',
+  //   '/restore-user',
 //   (req, res) => {
 //     return res.json(req.user);
 //   }

@@ -8,12 +8,12 @@ const {
   Reviews,
   Bookings,
   ReviewImages,
-} = require("../backend/db/models");
+} = require("../../db/models");
 
 const router = express.Router();
-const { setTokenCookie, restoreUser } = require("../backend/utils/auth");
+const { setTokenCookie, restoreUser } = require("../../utils/auth");
 
-db = require("../backend/config/database");
+db = require("../../config/database");
 
 // router.get(
 //     '/current', restoreUser, async (req, res) => {

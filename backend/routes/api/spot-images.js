@@ -1,10 +1,10 @@
 const express = require('express');
 const { Error } = require('sequelize');
-const { Spot, User, SpotImages, Reviews } = require('../backend/db/models');
+const { Spot, User, SpotImages, Reviews } = require('../../db/models');
 
 const router = express.Router();
-const { setTokenCookie, restoreUser } = require('../backend/utils/auth');
-db = require('../backend/config/database')
+const { setTokenCookie, restoreUser } = require('../../utils/auth');
+db = require('../../config/database')
 
 
 router.delete("/:spotImageId", async (req, res) => {

@@ -1,11 +1,11 @@
 const express = require('express');
 const { Error } = require('sequelize');
-const { Spot, User, SpotImages, Reviews, ReviewImages } = require('../backend/db/models');
+const { Spot, User, SpotImages, Reviews, ReviewImages } = require('../../db/models');
 const reviewimages = require('../backend/db/models/reviewimage');
 
 const router = express.Router();
-const { setTokenCookie, restoreUser } = require('../backend/utils/auth');
-db = require('../backend/config/database')
+const { setTokenCookie, restoreUser } = require('../../utils/auth');
+db = require('../../config/database')
 
 router.delete("/:reviewImageId", async (req, res) => {
     const id = req.params.reviewImageId
