@@ -56,13 +56,13 @@ function Header() {
       <div className="flex flex-row w-full items-center justify-center  ">
 
         <Link to={"/"}>
-          <HomeIcon className="h-8 w-8 2xl:h-24 2xl:w-24 lg:h-12 lg:w-12 text-teal-400 bg-blue-100 rounded-xl xl:text-xl" />
+          <HomeIcon className="h-8 w-8 2xl:h-24 2xl:w-24 lg:h-12 lg:w-12 border-2 border-teal-300 ml-[-25em] shadow-md shadow-slate-600 text-teal-400 bg-blue-100 rounded-xl xl:text-xl" />
           {/* <button className=" flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 p-2  border-2 border-gray-400  bg-teal-600 text-pink-50 justify-center rounded-2xl text-sm mt-2"> Home</button> */}
         </Link>
         <div className="flex ml-5 text-sm xl:text-2xl 2xl:text-5xl">
 
           Redirect in: {formatTime(timeLeft)}
-          {!isExtended && <button onClick={extendTimeout} className="bg-teal-600 text-pink-50 rounded-xl ml-5 p-1 ">Extend Timeout</button>}
+          {!isExtended && <button onClick={extendTimeout} className="bg-teal-600 border-2 border-slate-600 shadow-md shadow-slate-600 text-pink-50 rounded-xl ml-5 p-1 ">Extend Timeout</button>}
         </div>
       </div>
     </div>

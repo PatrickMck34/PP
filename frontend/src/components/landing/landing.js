@@ -3,19 +3,21 @@ import Chat from "../chatbot/chat.js"
 import { useEffect } from "react"
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Landing() {
-
-
+const history = useNavigate()
+  const user = useSelector(state => state.session.user)
 
   const [language, setLanguage] = useState("Hi, my name is Persephone your virtual friend. How can I help you?  ")
 
-  useEffect(() => {
-    if (1 === 1) {
+  // useEffect(() => {
+  //   if (user) {
+  //     history("user/admin/1")
 
-    }
-  }, [language])
+  //   }
+  // }, [user])
   return (
     <>
       <div className="flex justify-center   mx-auto w-full text-2xl">

@@ -59,8 +59,9 @@ function UserAdmin() {
       <div className="w-full flex items-center justify-center">
         <Link to="/">
 
-          <button className="bg-teal-600 border-2 border-slate-600 shadow-xl shadow-slate-600 rounded-xl p-1 mt-5 text-pink-50">Go Back</button>
+          <button className="bg-teal-600 border-2 border-slate-600 shadow-md shadow-slate-600 rounded-xl p-1 mt-5 text-pink-50">Go Back</button>
         </Link>
+        <button className="bg-teal-600 border-2 border-slate-600 shadow-md shadow-slate-600 rounded-xl p-1 mt-5 ml-5 text-pink-50">Submit A Provider</button>
       </div>
     </div>
 

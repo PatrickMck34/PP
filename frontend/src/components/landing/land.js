@@ -9,7 +9,7 @@ function Land() {
                     <button className="absolute w-[80%] md:w-[40%] lg:w-[30%]  ml-5 h-[20%] items-center justify-center mt-9 "></button>
 
                 </Link>
-                <img src="https://i.postimg.cc/gkb5HBRP/Landing2.png" alt="Loading...">
+                <img src="https://i.postimg.cc/gkb5HBRP/Landing2.png" className="mt-5" alt="Loading...">
                 </img>
                 <a href="https://www.google.com">
 
