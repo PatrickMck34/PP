@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from "react-router-dom"
 import { HomeIcon } from '@heroicons/react/solid';
+import {useSelector} from 'react-redux'
 function Header() {
   const [timeLeft, setTimeLeft] = useState(300); // Time left in seconds
   const [isExtended, setIsExtended] = useState(false);
   const timer = useRef(null);
-
+const user = useSelector(state => state.session.user)
   const resetTimer = () => {
     if (timer.current) {
       clearTimeout(timer.current);
@@ -48,7 +49,7 @@ function Header() {
   const location = useLocation();
 
   // Don't render the header on the /excludePage route
-  if (location.pathname === '/' || location.pathname === '/start' || location.pathname === '/admin/home' || location.pathname === '/admin/approvals') {
+  if (location.pathname === '/' || location.pathname === '/start' || location.pathname === '/admin/home' || location.pathname === '/admin/approvals' ||location.pathname.includes('/user/admin/')) {
     return null;
   }
   return (
