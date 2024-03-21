@@ -1,7 +1,7 @@
 const express = require('express');
 const { Error } = require('sequelize');
 const { Spot, User, SpotImages, Reviews, ReviewImages } = require('../../db/models');
-const reviewimages = require('../backend/db/models/reviewimage');
+const reviewimages = require('../../db/models/reviewimage');
 
 const router = express.Router();
 const { setTokenCookie, restoreUser } = require('../../utils/auth');
