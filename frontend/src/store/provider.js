@@ -1,6 +1,6 @@
-import { createStore } from 'redux';
+
 import { csrfFetch } from './csrf';
-import { useSelector } from "react-redux"
+
 const CREATE_PROVIDER = "/provider/create"
 const READ_PROVIDERS = "session/providers"
 const SET_PROVIDERS = 'session/SET_PROVIDERS';

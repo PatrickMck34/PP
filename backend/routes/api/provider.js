@@ -60,7 +60,6 @@ router.post("/new", async (req, res) => {
     specialNeeds,
     alternativeCare,
   } = req.body;
-  console.log(req.body)
   const provider = await Provider.create({
     Name,
     Users,
