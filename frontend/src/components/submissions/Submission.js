@@ -19,6 +19,7 @@ function Submission() {
     const sub = Object.values({ ...result, ...Name, Address, Phone, City, State, zipCode })
     const pro = { ...result, ...Name, Address, Phone, City, State, zipCode }
     let Approved = result.Approved || false
+    const user = useSelector(state => state.session.user)
 
     const domesticViolence = result.domesticViolence || false;
     const LGBTQ = result.LGBTQ || false;
@@ -103,7 +104,7 @@ function Submission() {
 
             return history(`/provider`)
         }
-        history("/")
+        history(`/user/admin/${user.id}`)
 
     }
     console.log(result.immigrants)
