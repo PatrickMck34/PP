@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import sideBanner from "../../resources/side_banner.png"
 function Landing() {
 const history = useNavigate()
   const user = useSelector(state => state.session.user)
@@ -25,9 +25,8 @@ const history = useNavigate()
       </div>
 
       <div className="flex flex-col w-full">
-
+      <img src={sideBanner} className="md:h-full w-[12%] md:ml-[5%] h-36 absolute xl:ml-[20%] border-2 border-slate-600 shadow-lg shadow-slate-700"></img>
         <img className=" items-center justify-center  mx-auto lg:w-[40%] w-[75%] max-w-md 2xl:max-w-2xl" src="https://i.ibb.co/sJ7MhrR/Land.png" alt="Loading Logo" />
-
 
 
 
@@ -45,6 +44,7 @@ const history = useNavigate()
         <Chat language={language} />
 
 
+      <img src={sideBanner} className="md:h-full w-[12%] md:ml-[80%] ml-[85%] h-36 absolute xl:ml-[68%] border-2 border-slate-600 shadow-lg shadow-slate-700"></img>
       </div>
 
 
