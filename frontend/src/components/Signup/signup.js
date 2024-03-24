@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom"
 
 import * as sessionActions from "../../store/session";
@@ -12,14 +12,13 @@ function Signup() {
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [errors, setErrors] = useState([]);
-
+	const user = useSelector(state => state.session.user)
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setErrors([]);
-		history("/provider")
 		return dispatch(sessionActions.signup({ username, email, password })).then(() =>
-			history('/provider'))
+			history(`/user/admin/${user.id}`))
 
 
 	};

@@ -13,7 +13,7 @@ export const createProvider = (provider) => async (dispatch) => {
     console.error('Provider is undefined or null');
     return;
   }
-  const { Name, Address, City, State, Phone, zipCode, Approved, domesticViolence, LGBTQ, crisisResources, humanTrafficking, military, lawEnforcement, elderSurvivor, childSurvivor, confidential, nonConfidential, healthCenter, dvProgram, psychProgram, callpolice, advocacyProgram, legalAdvice, forensicExams, generalHealth, pregnancy, housing, collegeOnCampus, title9, tribal, coalition, std, hivSupport, immigrants, blindDeaf, disabled, directCareCo, directCareMed, directCareOther, substanceAbuse, missingPersons, specialNeeds, alternativeCare } = provider;
+  const { Name, Address, City, State, Phone, zipCode,Users, Approved, domesticViolence, LGBTQ, crisisResources, humanTrafficking, military, lawEnforcement, elderSurvivor, childSurvivor, confidential, nonConfidential, healthCenter, dvProgram, psychProgram, callpolice, advocacyProgram, legalAdvice, forensicExams, generalHealth, pregnancy, housing, collegeOnCampus, title9, tribal, coalition, std, hivSupport, immigrants, blindDeaf, disabled, directCareCo, directCareMed, directCareOther, substanceAbuse, missingPersons, specialNeeds, alternativeCare } = provider;
   console.log(Approved)
 
   const data = await csrfFetch('/api/provider/new', {
@@ -22,7 +22,7 @@ export const createProvider = (provider) => async (dispatch) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      Name, Address, City, State, Phone, zipCode, Approved, domesticViolence, LGBTQ, crisisResources, humanTrafficking, military, lawEnforcement, elderSurvivor, childSurvivor, confidential, nonConfidential, healthCenter, dvProgram, psychProgram, callpolice, advocacyProgram, legalAdvice, forensicExams, generalHealth, pregnancy, housing, collegeOnCampus, title9, tribal, coalition, std, hivSupport, immigrants, blindDeaf, disabled, directCareCo, directCareMed, directCareOther, substanceAbuse, missingPersons, specialNeeds, alternativeCare
+      Name, Address, City, State, Phone, zipCode, Users, Approved, domesticViolence, LGBTQ, crisisResources, humanTrafficking, military, lawEnforcement, elderSurvivor, childSurvivor, confidential, nonConfidential, healthCenter, dvProgram, psychProgram, callpolice, advocacyProgram, legalAdvice, forensicExams, generalHealth, pregnancy, housing, collegeOnCampus, title9, tribal, coalition, std, hivSupport, immigrants, blindDeaf, disabled, directCareCo, directCareMed, directCareOther, substanceAbuse, missingPersons, specialNeeds, alternativeCare
     }),
   });
   const response = await data.json();

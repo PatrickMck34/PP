@@ -20,7 +20,7 @@ function Submission() {
     const pro = { ...result, ...Name, Address, Phone, City, State, zipCode }
     let Approved = result.Approved || false
     const user = useSelector(state => state.session.user)
-
+    const Users = user?.username
     const domesticViolence = result.domesticViolence || false;
     const LGBTQ = result.LGBTQ || false;
     const crisisResources = result.crisisResources || false;
@@ -62,6 +62,7 @@ function Submission() {
         e.preventDefault()
         dispatch(ProviderActions.createProvider({
            Name, Address, City, zipCode, Phone, State, Approved,
+           Users,
             domesticViolence,
             LGBTQ,
             crisisResources,

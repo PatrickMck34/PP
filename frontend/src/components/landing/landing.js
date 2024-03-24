@@ -12,12 +12,7 @@ const history = useNavigate()
 
   const [language, setLanguage] = useState("Hi, my name is Persephone your virtual friend. How can I help you?  ")
 
-  // useEffect(() => {
-  //   if (user) {
-  //     history("user/admin/1")
 
-  //   }
-  // }, [user])
   return (
     <>
       <div className="flex justify-center   mx-auto w-full text-2xl">
