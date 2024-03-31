@@ -1,30 +1,11 @@
 import React, { useEffect } from 'react';
-import { Link } from "react-router-dom"
+
 import { useDispatch } from 'react-redux';
 
 function Section2() {
     const dispatch = useDispatch()
     const [section2, setSection2] = React.useState({
-        // domesticViolence: false,
-        // LGBTQ: false,
-        // crisisResources: false,
-        // humanTrafficking: false,
-        // military: false,
-        // lawEnforcement: false,
-        // elderSurvivor: false,
-        // childSurvivor: false,
-        // allResources: false,
-        // legalAdvice: false,
-        // forensicExams: false,
-        // generalHealth: false,
-        // pregnancy: false,
-        // housing: false,
-        // collegeOnCampus: false,
-        // title9: false,
-        // tribal: false,
-        // coalition: false,
-        // std: false,
-        // hivSupport: false
+      
     });
 
     function updateSection2(key) {

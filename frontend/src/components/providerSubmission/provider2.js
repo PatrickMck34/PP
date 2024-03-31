@@ -1,30 +1,9 @@
 import React, { useEffect } from 'react';
-import { Link } from "react-router-dom"
 import { useDispatch } from 'react-redux';
 
 function Provider2() {
     const dispatch = useDispatch()
     const [provider2, setprovider2] = React.useState({
-        // domesticViolence: false,
-        // LGBTQ: false,
-        // crisisResources: false,
-        // humanTrafficking: false,
-        // military: false,
-        // lawEnforcement: false,
-        // elderSurvivor: false,
-        // childSurvivor: false,
-        // allResources: false,
-        // legalAdvice: false,
-        // forensicExams: false,
-        // generalHealth: false,
-        // pregnancy: false,
-        // housing: false,
-        // collegeOnCampus: false,
-        // title9: false,
-        // tribal: false,
-        // coalition: false,
-        // std: false,
-        // hivSupport: false
     });
 
     function updateprovider2(key) {

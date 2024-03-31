@@ -5,14 +5,11 @@ import FormatPhoneNumber from '../Phone/formatPhone';
 function Results() {
     const dispatch = useDispatch()
     const results = useSelector((state) => state.section.section2)
-    const zip = useSelector((state) => state.section.zipCode)
     const providers = useSelector((state) => state.provider?.providers)
-    const res = Object.values(results)
     let data 
     if (providers) {
         data = Object.values(providers);
     }
-    const test = { Approved: false }
     const displayNameMapping = {
         callPolice: 'Law Enforcement',
         advocacyProgram: 'Advocacy',

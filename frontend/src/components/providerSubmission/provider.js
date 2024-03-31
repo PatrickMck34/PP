@@ -1,16 +1,13 @@
 
 import React, { useEffect } from 'react'
-import { Link } from "react-router-dom"
 
 import { useState } from "react"
 
 import { useDispatch } from 'react-redux'
-import { StartTwoTone } from '@mui/icons-material'
 
 function Provider() {
 
   const dispatch = useDispatch()
-  const [location, setLocation] = useState(null);
   const [zipCode, setZipCode] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");

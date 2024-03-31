@@ -1,8 +1,6 @@
 
 import { useSelector, useDispatch } from "react-redux"
 import React from 'react'
-import { Link } from "react-router-dom"
-import { useState } from "react"
 
 function Section3() {
     const dispatch = useDispatch()

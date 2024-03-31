@@ -5,7 +5,6 @@ import Provider2 from './provider2.js';
 import Provider from './provider.js';
 import Provider3 from './provider3.js';
 import { useDispatch, useSelector } from 'react-redux';
-import { createProvider } from '../../store/provider.js';
 import * as ProvidersActions from "../../store/provider.js"
 
 import { ProviderInfoContext } from '../context/context.jsx';
@@ -21,12 +20,10 @@ function ProviderQuestions() {
   const Address = useSelector(state => state.provider?.zipCode?.address)
   const Phone = useSelector(state => state.provider?.zipCode?.phone)
   const ZipCode = useSelector(state => state.provider?.zipCode)
-  const State = useSelector(state => state.provider?.address)
-  const City = useSelector(state => state.provider?.address)
+
   const provider1 = useSelector(state => state.provider?.provider);
-  const provider2 = useSelector(state => state.provider?.provider2);
-  const provider3 = useSelector(state => state.provider?.provider2);
-  // const combinedData = { ...provider1, ...provider2, ...provider3, ...Address,...Name,...Phone,...ZipCode,...State,...City}; 
+
+  
   const [info, setInfo] = React.useState({
     Name: "",
     Address: "",

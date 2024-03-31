@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from 'react'
 import Geolocation from "../geoLocation/geolocation.js"
-import { useState } from "react"
-import getZipCode from '../geoLocation/zipcode.js'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
+
+
 function Section1() {
     const dispatch = useDispatch()
     const [location, setLocation] = useState(null);

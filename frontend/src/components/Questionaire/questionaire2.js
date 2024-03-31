@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from "react-router-dom"
 import { CSSTransition } from 'react-transition-group';
 import Section2 from './section2.js';
 import Section1 from './section1.js';
 import Section3 from './section3.js';
-import sunflower from "../../resources/sunflower.png"
 import HelpComponent from '../sunflower/sunflower.jsx';
 import advert from "../../resources/advert.png"
 

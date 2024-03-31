@@ -1,8 +1,7 @@
 
 import { useSelector, useDispatch } from "react-redux"
-import React, { useRef } from 'react'
-import { Link } from "react-router-dom"
-import { useState } from "react"
+import React from 'react'
+
 
 function Provider3({ info }) {
     const dispatch = useDispatch()
