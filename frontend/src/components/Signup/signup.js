@@ -12,17 +12,19 @@ function Signup() {
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [errors, setErrors] = useState([]);
-	const user = useSelector(state => state.session.user)
+	const user = useSelector(state => state.session?.user?.id)
 
-	const handleSubmit = (e) => {
+	const handleSubmit  = async (e) => {
 		e.preventDefault();
 		setErrors([]);
-		return dispatch(sessionActions.signup({ username, email, password })).then(() =>
-			history(`/user/admin/${user.id}`))
-
-
-	};
-
+		const newUser = await dispatch(sessionActions.signup({ username, email, password }));
+		if (newUser) {
+		  history(`/user/admin/${user}`);
+		}
+	  };
+React.useEffect(() => {
+	dispatch(sessionActions.restoreUser())
+}, [user])
 
 	return (
 		<>

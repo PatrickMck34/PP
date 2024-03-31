@@ -16,8 +16,6 @@ function Submission() {
     const Phone = submission.phone
     const City = submission.city
     const State = submission.state
-    const sub = Object.values({ ...result, ...Name, Address, Phone, City, State, zipCode })
-    const pro = { ...result, ...Name, Address, Phone, City, State, zipCode }
     let Approved = result.Approved || false
     const user = useSelector(state => state.session.user)
     const Users = user?.username
@@ -26,6 +24,8 @@ function Submission() {
     const crisisResources = result.crisisResources || false;
     const humanTrafficking = result.humanTrafficking || false;
     const military = result.military || false;
+    const Email = result.Email || "";
+    const webSite = result.webSite || "";
     const lawEnforcement = result.lawEnforcement || false;
     const elderSurvivor = result.elderSurvivor || false;
     const maleSurvivor = result.maleSurvivor || false;
@@ -63,6 +63,7 @@ function Submission() {
         dispatch(ProviderActions.createProvider({
            Name, Address, City, zipCode, Phone, State, Approved,
            Users,
+           Email, webSite,
             domesticViolence,
             LGBTQ,
             crisisResources,
@@ -118,7 +119,7 @@ function Submission() {
             <div className="border-2 h-fit border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
                 {<p className="text-2xl justify-center flex items-center">{Name}</p>}
                 {Address && <p>Address: {Address}</p>}
-                {City + " ," + " " + City}
+                {City &&<p> " ," + " " + {City}</p>}
                 {zipCode && <p>zipCode Code: {zipCode}</p>}
                 {Phone && <p>Phone: {Phone}</p>}
                 <span className="bg-teal-600 h-1 w-full mt-5 mb-2"></span>

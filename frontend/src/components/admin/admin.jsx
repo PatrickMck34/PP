@@ -112,7 +112,7 @@ function Admin() {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search:"
-                    className="rounded-xl mt-5 h-fit w-full  border-2 border-slate-700 p-1   justify-center items-center flex bg-gray-100  lg:text-3xl  text-xl"
+                    className="rounded-xl mt-5 shadow-xl shadow-slate-800 h-fit w-full  border-2 border-slate-700 p-1   justify-center items-center flex bg-gray-100  lg:text-3xl  text-xl"
                 />
                 <div key={searchData?.id} className="border-2 border-teal-900 bg-teal-300 mt-1 xl:mt-4 md:mx-[10%] rounded-xl  p-1">
                     <button type="submit" className="" onClick={Search(search)}></button>

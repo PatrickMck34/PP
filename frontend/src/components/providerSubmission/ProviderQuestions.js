@@ -17,7 +17,7 @@ function ProviderQuestions() {
   const dispatch = useDispatch()
   const [errors, setErrors] = React.useState(["Please fill out required fields"]);
   const [currentSection, setCurrentSection] = React.useState(1);
-  // const Name = useSelector(state => state.provider?.name)
+  const Name = useSelector(state => state.provider?.name)
   const Address = useSelector(state => state.provider?.zipCode?.address)
   const Phone = useSelector(state => state.provider?.zipCode?.phone)
   const ZipCode = useSelector(state => state.provider?.zipCode)
@@ -76,13 +76,13 @@ function ProviderQuestions() {
 
   const Trans = () => {
     setErrors([])
-    // if (address !== '' && phone !== '' && name !== '' && zipCode !== '' && phone.length === 10 && zipCode.length === 5) {
+    if (Address !== '' && Phone !== '' && Name !== '' && ZipCode !== '' && Phone.length === 10 && ZipCode.length === 5) {
     setCurrentSection(currentSection + 1);
 
 
 
 
-  };
+  };}
 
   const Results = () => {
 

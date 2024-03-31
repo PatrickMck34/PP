@@ -11,12 +11,11 @@ function UserAdmin() {
   const address = useSelector((state) => state.provider?.address)
   const phone = useSelector((state) => state.provider?.phone)
   const providers = useSelector((state) => state.section?.allSections)
-  const user = useSelector(state => state.session.user)
+  const user = useSelector(state => state.session?.user)
   let data = Object.values(submission);
 
   useEffect(() => {
-    dispatch(sectionActions.getProviders(user?.id))
-console.log(submission)
+    dispatch(sectionActions.getProviders(user.id))
 
 }, [])
   return (

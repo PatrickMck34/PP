@@ -6,7 +6,7 @@ import Section1 from './section1.js';
 import Section3 from './section3.js';
 import sunflower from "../../resources/sunflower.png"
 import HelpComponent from '../sunflower/sunflower.jsx';
-
+import advert from "../../resources/advert.png"
 
 function Questionaire2() {
 
@@ -67,6 +67,7 @@ function Questionaire2() {
       )}
       <div className="flex lg:mt-[26%] mt-5 md:ml-12 ">
 
+      <img src={advert} className="mt-12"></img>
       </div>
     </div>
   );

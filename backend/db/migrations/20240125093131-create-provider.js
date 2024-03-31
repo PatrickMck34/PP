@@ -26,6 +26,12 @@ module.exports = {
       State: {
         type: Sequelize.STRING
       },
+      Email: {
+        type: Sequelize.STRING
+      },
+      webSite: {
+        type: Sequelize.STRING
+      },
       Phone: {
         type: Sequelize.STRING
       },

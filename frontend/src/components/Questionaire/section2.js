@@ -62,7 +62,7 @@ function Section2() {
             <div className="flex justify-center mt-1 ">
                 <button className=" bg-teal-600 border-2 border-teal-700 shadow-md shadow-slate-400 font-serif rounded-xl p-1 h-20 w-36" id="humanTrafficking" onClick={() => updateSection2("humanTrafficking")}>Human Trafficking</button>
                 <button className=" bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="allResources" onClick={() => updateSection2("allResources")}>All Resources</button>
-                <button className=" bg-teal-600 border-2 border-slate-400 shadow-md shadow-slate-400 font-serif mr-1 rounded-xl p-1  h-20 w-36" id="crisisResources" onClick={() => updateSection2("crisisResources")}>Crisis Resources</button>
+                <button className=" bg-slate-400 border-2 border-slate-400 shadow-md shadow-slate-400 font-serif mr-1 rounded-xl p-1  h-20 w-36" id="crisisResources" onClick={() => updateSection2("crisisResources")}>Crisis Resources</button>
             </div>
 
         </div>

@@ -5,7 +5,6 @@ import { useState } from "react"
 import getZipCode from '../geoLocation/zipcode.js'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
-
 function Section1() {
     const dispatch = useDispatch()
     const [location, setLocation] = useState(null);
