@@ -13,7 +13,7 @@ function Questionaire2() {
   const [currentSection, setCurrentSection] = React.useState(1);
 
   const Trans = () => {
-    setCurrentSection((currentSection % 3) + 1);
+    setCurrentSection((currentSection % 4) + 1);
   };
   const Results = () => {
 
@@ -64,7 +64,7 @@ function Questionaire2() {
           <Section3 />
         </CSSTransition>
       </div>
-      {currentSection === 3 ? (
+      {currentSection === 4 ? (
         <div>
           <Link to="/results">
             <button className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">Results</button>
