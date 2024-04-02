@@ -2,6 +2,7 @@ import { createStore } from 'redux';
 const READ_PROVIDERS = "/providers"
 const SET_PROVIDERS = 'session/SET_PROVIDERS';
 const SET_ALL_PROVIDERS = 'session/SET_ALL_PROVIDERS';
+const SET_CATEGORY = 'session/SET_CATEGORY';
 
 export const getProviders = (results) => async (dispatch) => {
   const response = await fetch('/api/provider', {
@@ -45,6 +46,10 @@ export const getAllProvider = (providers) => ({
   providers,
 
 });
+export const setCategory = (category) => ({
+  type: SET_CATEGORY,
+  category,
+});
 
 
 const initialState = {
@@ -61,6 +66,8 @@ export const sectionReducer = (state = initialState, action) => {
       return { ...state, section3: action.payload };
     case 'SET_ZIPCODE':
       return { ...state, zipCode: action.payload };
+      case 'SET_CATEGORY':
+      return { ...state, category: action.payload };
     case SET_ALL_PROVIDERS:
       return { ...state, allSections: action.providers };
     default:

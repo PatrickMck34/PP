@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import Provider2 from './provider2.js';
 import Provider from './provider.js';
 import Provider3 from './provider3.js';
+import Categories from '../categoriesPage/categoriesPage.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import * as ProvidersActions from "../../store/provider.js"
 
@@ -148,9 +149,17 @@ function ProviderQuestions() {
           >
             <Provider setInfo={info} />
           </CSSTransition>
-
           <CSSTransition
             in={currentSection === 2}
+            timeout={200}
+            classNames="slide"
+            unmountOnExit
+          >
+            <Categories setInfo={info} />
+          </CSSTransition>
+
+          <CSSTransition
+            in={currentSection === 3}
             timeout={200}
             classNames="slide"
             unmountOnExit
@@ -159,7 +168,7 @@ function ProviderQuestions() {
           </CSSTransition>
 
           <CSSTransition
-            in={currentSection === 3}
+            in={currentSection === 4}
             timeout={100}
             classNames="slide"
             unmountOnExit

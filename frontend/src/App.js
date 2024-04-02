@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import * as ProvidersActions from "./store/provider.js"
 import { useDispatch } from 'react-redux';
 import Footer from './components/footer/footer.js';
-import { Results, Prolog, Questions2, HelpBot, Header, AdminApprovals, Admin, AdminHome, Chat, Submission, Land, ProviderQuestions, Signup } from './imports/importFiles.js';
+import { Results, Prolog, Questions2, HelpBot, Header, Categories, AdminApprovals, Admin, AdminHome, Chat, Submission, Land, ProviderQuestions, Signup } from './imports/importFiles.js';
 export default function App() {
 
   const user = useSelector(state => state.session.user)
@@ -30,6 +30,7 @@ export default function App() {
         <Route path="/help2" element={<Questions2 />} />
         <Route path="/login" element={<Login />} />
         <Route path="/prolog" element={<Prolog />} />
+        <Route path="/categories" element={<Categories />} />
         <Route path="/admin/listings" element={<Admin />} />
         <Route path="/admin/home" element={<AdminHome />} />
 

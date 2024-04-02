@@ -6,6 +6,7 @@ import Section1 from './section1.js';
 import Section3 from './section3.js';
 import HelpComponent from '../sunflower/sunflower.jsx';
 import advert from "../../resources/advert.png"
+import Categories from '../categoriesPage/categoriesPage.jsx';
 
 function Questionaire2() {
 
@@ -34,8 +35,18 @@ function Questionaire2() {
         >
           <Section1 />
         </CSSTransition>
+          <CSSTransition
+            in={currentSection === 2}
+            timeout={200}
+            classNames="slide"
+            unmountOnExit
+          >
+            <Categories />
+          </CSSTransition>
+          
+       
         <CSSTransition
-          in={currentSection === 2}
+          in={currentSection === 3}
           timeout={200}
           classNames="slide"
           unmountOnExit
@@ -45,7 +56,7 @@ function Questionaire2() {
 
         </CSSTransition>
         <CSSTransition
-          in={currentSection === 3}
+          in={currentSection === 4}
           timeout={100}
           classNames="slide"
           unmountOnExit

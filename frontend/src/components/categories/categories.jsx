@@ -2,6 +2,8 @@
 
 const categories = [
     Name,
+    Email, 
+    webSite,
     Address,
     City,
     State,
