@@ -4,7 +4,7 @@ import * as sectionActions from '../../store/section'
 import FormatPhoneNumber from '../Phone/formatPhone';
 function Results() {
     const dispatch = useDispatch()
-    const results = useSelector((state) => state.section.section2)
+    const results = useSelector((state) => state.section.section3)
     const providers = useSelector((state) => state.provider?.providers)
     let data 
     const [provider, setProviders] = useState([]);

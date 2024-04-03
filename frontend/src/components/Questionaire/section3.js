@@ -43,101 +43,101 @@ function Section3() {
 
     function advocacyProgram() {
         document.getElementById("advocacy").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, advocacyProgram: true });
+        setSection3({ ...section2, advocacyProgram: true });
     }
     function factSheet() {
         document.getElementById("fact").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, factSheet: true });
+        setSection3({ ...section2, factSheet: true });
     }
     function lightbulb() {
         document.getElementById("light").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, lightbulb: true });
+        setSection3({ ...section2, lightbulb: true });
     }
     function altCare() {
         document.getElementById("alt").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, altCare: true });
+        setSection3({ ...section2, altCare: true });
     }
     function hivSupport() {
         document.getElementById("hivSupport").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, hivSupport: true });
+        setSection3({ ...section2, hivSupport: true });
     }
 
 
     function directCareCo() {
         document.getElementById("directCareCo").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, directCareCo: true });
+        setSection3({ ...section2, directCareCo: true });
     }
 
     function directCareMed() {
         document.getElementById("directCareMed").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, directCareMed: true });
+        setSection3({ ...section2, directCareMed: true });
     }
 
     function directCareOther() {
         document.getElementById("directCareOther").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, directCareOther: true });
+        setSection3({ ...section2, directCareOther: true });
     }
 
     function substanceAbuse() {
         document.getElementById("substanceAbuse").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, substanceAbuse: true });
+        setSection3({ ...section2, substanceAbuse: true });
     }
     function legalAdvice() {
         document.getElementById("legalAdvice").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, legalAdvice: true });
+        setSection3({ ...section2, legalAdvice: true });
     }
 
     function forensicExams() {
         document.getElementById("forensicExams").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, forensicExams: true });
+        setSection3({ ...section2, forensicExams: true });
     }
 
     function generalHealth() {
         document.getElementById("generalHealth").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, generalHealth: true });
+        setSection3({ ...section2, generalHealth: true });
     }
 
     function pregnancy() {
         document.getElementById("pregnancy").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, pregnancy: true });
+        setSection3({ ...section2, pregnancy: true });
     }
 
     function housing() {
         document.getElementById("housing").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, housing: true });
+        setSection3({ ...section2, housing: true });
     }
 
     function collegeOnCampus() {
         document.getElementById("collegeOnCampus").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, collegeOnCampus: true });
+        setSection3({ ...section2, collegeOnCampus: true });
     }
 
     function title9() {
         document.getElementById("title9").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, title9: true });
+        setSection3({ ...section2, title9: true });
     }
 
     function tribal() {
         document.getElementById("tribal").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, tribal: true });
+        setSection3({ ...section2, tribal: true });
     }
 
     function coalition() {
         document.getElementById("coalition").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, coalition: true });
+        setSection3({ ...section2, coalition: true });
     }
     function missingPersons() {
         document.getElementById("missingPersons").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, missingPersons: true });
+        setSection3({ ...section2, missingPersons: true });
     }
 
     function lawEnforcement() {
         document.getElementById("lawEnforcement").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, lawEnforcement: true });
+        setSection3({ ...section2, lawEnforcement: true });
     }
     function std() {
         document.getElementById("std").style.backgroundColor = "rgb(166,220,220)";
-        setSection3({ ...section3, std: true });
+        setSection3({ ...section2, std: true });
     }
 
     React.useEffect(() => {
