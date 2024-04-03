@@ -64,17 +64,37 @@ function Questionaire2() {
           <Section3 />
         </CSSTransition>
       </div>
-      {currentSection === 4 ? (
+      {(currentSection != 1 && currentSection != 4) ? (
         <div>
           <Link to="/results">
             <button className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">Results</button>
           </Link>
+        
+        <button onClick={Trans} className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">More Options</button>
+      
         </div>
       ) : (
         <div>
-          <button onClick={Trans} className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">Next</button>
+        
         </div>
-      )}
+      ) } {(currentSection == 4) ? (
+        <div>
+<Link to="/results">
+            <button className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">Results</button>
+          </Link>
+        </div>) : (<div>
+
+        </div>)}
+        {(currentSection == 1) ? (
+        <div>
+  
+          <button onClick={Trans} className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">Next</button>
+      
+        </div>) : (<div>
+
+        </div>)}
+     
+         
       <div className="flex lg:mt-[26%] mt-5 md:ml-12 ">
 
       <img src={advert} className="mt-12"></img>

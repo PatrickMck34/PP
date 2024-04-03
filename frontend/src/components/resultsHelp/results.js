@@ -69,10 +69,7 @@ function Results() {
         window.scrollTo(-20, -20);
 
     }, [results])
-    useEffect(() => {
-        const sortedProviders = [...provider].sort((a, b) => countCommonPairs(results, b) - countCommonPairs(results, a));
-        setProviders(sortedProviders);
-      }, [provider, results]);
+
     return (
         <div className="xl:p-4">
 
@@ -83,8 +80,8 @@ function Results() {
 
                 </div>
                {/* { providers.sort((a, b) => countCommonPairs(results, a) - countCommonPairs(results, b)).map(provider => { */}
-  // Your map function here
-                {provider?.map((provider) => (
+
+                {providers?.map((provider) => (
                     <div key={provider?.id}>
                         {provider.Approved === true &&
                             <div className="border-2 border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
