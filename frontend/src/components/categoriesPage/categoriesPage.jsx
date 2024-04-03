@@ -12,6 +12,55 @@ function Categories () {
         Health: false,
         Crisis: false
     })
+    const Legals = {
+        // callpolice: true,
+        domesticViolence: true,
+        // lawEnforcement: true,
+        // humanTrafficking: true,
+        // legalAdvice: true,
+        // coalition: true,
+        // title9: true,
+        // tribal: true,
+        // forensicExams: true,
+    }
+    const Psychologys = {
+        psychProgram: true,
+        advocacyProgram: true,
+        substanceAbuse: true,
+        hivSupport: true,
+        alternativeCare: true,
+        directCareCo:true,
+        childSurvivor: true,
+        elderSurvivor: true,
+        maleSurvivor:true
+    }
+    const Healths = {
+        generalHealth: true,
+        pregnancy: true,
+        healthCenter: true,
+        std: true,
+        hivSupport: true,
+        directCareMed: true,
+        directCareOther: true,
+        blindDeaf: true,
+        disabled:true
+
+    }
+    const Crisiss = {
+        crisisResources: true,
+        missingPersons: true,
+        specialNeeds: true,
+        alternativeCare: true,
+        directCareOther: true,
+        housing: true,
+        collegeOnCampus: true,
+        title9: true,
+        tribal: true,
+        coalition:true,
+
+
+    }
+
     const {showTooltips, toggleTooltips} =useContext(SunflowerContext)
 
 
@@ -20,9 +69,12 @@ function Categories () {
         setCategory({ ...category, [key]: true });
     }
     useEffect(() => {
-        dispatch({ type: 'SET_CATEGORY', payload: category });
-
+        dispatch({ type: 'SET_CATEGORY', payload: category })
+        
     }, [category])
+    useEffect(() => {
+    dispatch({ type: 'SET_SECTION2', payload: Legals })
+    }, [])
     return (
         <div>
             {/* <img src={sunflower} alt="Sunflower" onClick={toggleTooltips} /> */}

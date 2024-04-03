@@ -4,13 +4,15 @@ import * as sectionActions from '../../store/section'
 import FormatPhoneNumber from '../Phone/formatPhone';
 function Results() {
     const dispatch = useDispatch()
-    const results = useSelector((state) => state.section.section3)
+    const results = useSelector((state) => state.section.section2)
     const providers = useSelector((state) => state.provider?.providers)
     let data 
+    let final
     const [provider, setProviders] = useState([]);
     if (providers) {
         data = Object.values(providers);
     }
+console.log(final)
     const displayNameMapping = {
         callPolice: 'Law Enforcement',
         advocacyProgram: 'Advocacy',
@@ -65,7 +67,8 @@ function Results() {
     }, []);
 
     useEffect(() => {
-        dispatch(sectionActions.getProviders(results))
+        // dispatch(sectionActions.getAllProviders())
+   dispatch(sectionActions.getProviders(results))
         window.scrollTo(-20, -20);
 
     }, [results])

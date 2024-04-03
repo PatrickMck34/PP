@@ -141,7 +141,7 @@ function Section3() {
     }
 
     React.useEffect(() => {
-        dispatch({ type: 'SET_SECTION3', payload: section3 });
+        dispatch({ type: 'SET_SECTION2', payload: section3 });
 
     }, [section3])
     return (
