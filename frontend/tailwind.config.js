@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      transitionDelay: {
+        '0': '0ms',
+        '200': '200ms',
+        '500': '5000ms',
+        '1000': '1000ms',
+      },
+    },
   },
   plugins: [],
 }

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import sunflower from '../../resources/sunflower.png'; // adjust the path to match your project structure
-
+import { SunflowerContext } from '../sunflowerContext/sunflowerContext';
 function HelpComponent({ currentSection }) {
+  const {showTooltips, toggleTooltips} =useContext(SunflowerContext)
   const [showHelp, setShowHelp] = useState(true);
 
   const handleImageClick = () => {
@@ -34,7 +35,7 @@ function HelpComponent({ currentSection }) {
           src={sunflower}
           alt="sunflower"
           className=" flex mt-3 ml-5 max-h-14"
-          onClick={handleImageClick}
+          onClick={toggleTooltips}
         />
         {!showHelp && (
           <div className=" flex flex-col w-48 text-sm font-semibold mt-4 ml-2 ">

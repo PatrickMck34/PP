@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import * as ProvidersActions from "./store/provider.js"
 import { useDispatch } from 'react-redux';
 import Footer from './components/footer/footer.js';
+import {SunflowerContext} from './components/sunflowerContext/sunflowerContext.jsx';
 import { Results, Prolog, Questions2, HelpBot, Header, Categories, AdminApprovals, Admin, AdminHome, Chat, Submission, Land, ProviderQuestions, Signup } from './imports/importFiles.js';
 export default function App() {
 
@@ -19,8 +20,9 @@ export default function App() {
       dispatch(ProvidersActions.getProvider(user.id))
     }
   }, [user])
-
+ 
   return (
+ 
     <Router>
       <Header />
 
@@ -54,6 +56,5 @@ export default function App() {
       </Routes>
       <Footer />
     </Router>
-
   )
 }

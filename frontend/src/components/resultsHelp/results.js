@@ -7,6 +7,7 @@ function Results() {
     const results = useSelector((state) => state.section.section2)
     const providers = useSelector((state) => state.provider?.providers)
     let data 
+    const [provider, setProviders] = useState([]);
     if (providers) {
         data = Object.values(providers);
     }
@@ -50,6 +51,15 @@ function Results() {
         coalition: 'Coalition'
 
     }
+    function countCommonPairs(obj1, obj2) {
+  let count = 0;
+  for (let key in obj1) {
+    if (obj1[key] === obj2[key]) {
+      count++;
+    }
+  }
+  return count;
+}
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -59,6 +69,10 @@ function Results() {
         window.scrollTo(-20, -20);
 
     }, [results])
+    useEffect(() => {
+        const sortedProviders = [...provider].sort((a, b) => countCommonPairs(results, b) - countCommonPairs(results, a));
+        setProviders(sortedProviders);
+      }, [provider, results]);
     return (
         <div className="xl:p-4">
 
@@ -68,8 +82,9 @@ function Results() {
                     Your results
 
                 </div>
-
-                {providers?.map((provider) => (
+               {/* { providers.sort((a, b) => countCommonPairs(results, a) - countCommonPairs(results, b)).map(provider => { */}
+  // Your map function here
+                {provider?.map((provider) => (
                     <div key={provider?.id}>
                         {provider.Approved === true &&
                             <div className="border-2 border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
@@ -79,7 +94,7 @@ function Results() {
                                         {provider?.Address && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.Address}</p>}
                                         {provider?.zipCode && <p className="font-semibold lg:text-2xl text-center mb-1"> {provider?.zipCode}</p>}
                                         {provider?.Phone && <p className="font-semibold text-xl">Phone: {FormatPhoneNumber(provider?.Phone)}</p>}
-                                        {provider?.Email && <p className="font-semibold text-xl">Email: {FormatPhoneNumber(provider?.Email)}</p>}
+                                        {provider?.Email && <p className="font-semibold text-xl">Email: {provider?.Email}</p>}
 
                                         <div className="flex flex-wrap border-2 border-slate-700 p-1 md:w-full mt-9 bg-gray-100">
                                             <h1 className="bg-teal-900  text-pink-50 border-2 rounded p-1 w-full h-5 lg:h-9  lg:text-3xl  items-center justify-center flex border-slate-700">Expertise</h1>
@@ -106,6 +121,7 @@ function Results() {
                             </div>}
                     </div>
                 ))}
+{/* })}; */}
             </div>
         </div>
     )
