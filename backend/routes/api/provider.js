@@ -270,22 +270,28 @@ router.get("/", async (req, res) => {
   // Parse the results from the headers
   const values = JSON.parse(req.headers['x-results']);
 
-  // Create a dynamic query object based on the user input
-  const query = {};
-  for (const key in values) {
-    if (values[key] === true) {
-      query[key] = true;
-    }
-  }
+  // Fetch all providers
+  const providers = await Provider.findAll();
 
-  // Find all providers that match the query
-  const providers = await Provider.findAll({
-    where: query
+  // For each provider, count the number of matching keys
+  providers.forEach(provider => {
+    let matchCount = 0;
+    for (const key in values) {
+      if (values[key] === true && provider[key] === true) {
+        matchCount++;
+      }
+    }
+    provider.dataValues.matchCount = matchCount;
   });
 
-  return res.status(200).json(providers);
-});
+  // Filter the providers to only include those with at least one match
+  const matchingProviders = providers.filter(provider => provider.dataValues.matchCount > 0);
 
+  // Sort the providers based on the match count
+  matchingProviders.sort((a, b) => b.dataValues.matchCount - a.dataValues.matchCount);
+
+  return res.status(200).json(matchingProviders);
+});
 router.get("/all", async (req, res) => {
 
   const providers = await Provider.findAll();
