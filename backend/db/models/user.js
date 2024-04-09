@@ -48,10 +48,7 @@ module.exports = (sequelize, DataTypes) => {
     }
       
     static associate(models) {
-      User.hasMany(models.Spot, {as: 'Owner', foreignKey: 'ownerId'})
-      User.hasMany(models.Reviews, {foreignKey:'userId'})
-      User.hasMany(models.Bookings, {foreignKey:'userId'})
-      User.belongsTo(models.SpotImages, {through: models.Spot, foreignKey: 'id'})
+
     }
   }
   User.init({
