@@ -40,14 +40,15 @@ const history = useNavigate()
 
 
 
-<div className="bg-teal-500 border-2 border-slate-800 p-2 rounded-xl shadow-md shadow-green-900 mx-auto items-center flex justify-center">
-    <div className="bg-teal-600 border-2 border-slate-800 rounded shadow-md shadow-slate-500  justify-center items-center ">
+<div className=" p-1 rounded-xl  mx-auto items-center flex justify-center">
+    <div className="bg-teal-600 border-2 border-slate-800 rounded-xl shadow-md shadow-slate-500 p-[2px] justify-center items-center ">
 
         <iframe
 src="https://www.chatbase.co/chatbot-iframe/HpF4UQWebMoiwpEdW7NsG"
 title="Chatbot"
 width="40%"
-style={{"height": "100%", "min-height": "300px", "flex": "1", "margin":"auto" ,"min-width":"300px", "padding":"4px"}}
+className="rounded-xl bg-gray-700 "
+style={{"height": "100%", "min-height": "300px", "flex": "1", "margin":"auto" ,"min-width":"300px", "padding":"4px",}}
 frameborder="0"
 ></iframe>
 </div>
