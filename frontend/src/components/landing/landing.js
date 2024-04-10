@@ -40,8 +40,19 @@ const history = useNavigate()
 
 
 
+<div className="bg-teal-500 border-2 border-slate-800 p-2 rounded-xl shadow-md shadow-green-900 mx-auto items-center flex justify-center">
+    <div className="bg-teal-600 border-2 border-slate-800 rounded shadow-md shadow-slate-500  justify-center items-center ">
 
-        <Chat language={language} />
+        <iframe
+src="https://www.chatbase.co/chatbot-iframe/HpF4UQWebMoiwpEdW7NsG"
+title="Chatbot"
+width="40%"
+style={{"height": "100%", "min-height": "300px", "flex": "1", "margin":"auto" ,"min-width":"300px", "padding":"4px"}}
+frameborder="0"
+></iframe>
+</div>
+</div>
+
 
 
       {/* <img src={sideBanner} className="md:h-full w-[12%] md:ml-[80%] ml-[88%] h-36 absolute xl:ml-[68%] border-2 border-slate-600 shadow-lg shadow-slate-700"></img> */}
