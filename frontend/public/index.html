@@ -40,5 +40,20 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      !function(w, d, s, ...args){
+        var div = d.createElement('div');
+        div.id = 'aichatbot';
+        d.body.appendChild(div);
+        w.chatbotConfig = args;
+      
+        var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s);
+        j.defer = true;
+        j.type = 'module';
+        j.src = 'https://aichatbot.sendbird.com/index.js';
+        f.parentNode.insertBefore(j, f);
+      }(window, document, 'script', 'AD1AAD74-6C5C-44A5-9611-B3AF01702C21', 'onboarding_bot');
+      </script>
   </body>
 </html>

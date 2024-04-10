@@ -6,6 +6,50 @@ const READ_PROVIDERS = "session/providers"
 const SET_PROVIDERS = 'session/SET_PROVIDERS';
 const UPDATE_PROVIDER = 'session/UPDATE_PROVIDERS';
 const DELETE_PROVIDER = '/DELETE_PROVIDERS';
+
+
+// {
+//   "bot_type": "AI assistant",
+//   "bot_userid": "Janes_ai_assistant",
+//   "bot_nickname": "Jane's ai assistant",
+//   "is_privacy_mode": false,
+//   "ai": {
+//       "backend": "chatgpt",
+//       "system_message": "You are a helpful assistant.",
+//       "temperature": 1.00,
+//       "max_tokens": 256,
+//       "top_p": 1.00,
+//       "presence_penalty": 0.00,
+//       "frequency_penalty": 0.00
+//   }
+// }
+// {
+//   "bot_callback_url": "",
+//   "is_privacy_mode": false,
+//   "enable_mark_as_read": true,
+//   "show_member": false,
+//   "channel_invitation_preference": 0,
+//   "created_at": 1686141160,
+//   "bot": {
+//       "bot_userid": "Janes_ai_assistant",
+//       "bot_nickname": "Jane's ai assistant",
+//       "bot_profile_url": "",
+//       "bot_require_auth_for_profile_image": false,
+//       "bot_metadata": {},
+//       "bot_token": "10f514b570affa358002ae1a3edcbb27cb5cd1f9",
+//       "bot_type": "AI assistant"
+//   },
+//   "ai": {
+//       "backend": "chatgpt",
+//       "system_message": "You are a helpful assistant.",
+//       "temperature": 1.0,
+//       "max_tokens": 256,
+//       "top_p": 1.0,
+//       "presence_penalty": 0.0,
+//       "frequency_penalty": 0.0
+//   }
+// }
+
 export const createProvider = (provider) => async (dispatch) => {
   // const Users = useSelector(state => state.session.user.id)
   console.log(provider)
