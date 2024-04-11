@@ -1,16 +1,10 @@
 import React from "react";
-import Chat from "../chatbot/chat.js"
-import { useEffect } from "react"
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import sideBanner from "../../resources/side_banner.png"
-function Landing() {
-const history = useNavigate()
-  const user = useSelector(state => state.session.user)
 
-  const [language, setLanguage] = useState("Hi, my name is Persephone your virtual friend. How can I help you?  ")
+function Landing() {
 
 
   return (
@@ -56,7 +50,7 @@ frameborder="0"
 
 
 
-      {/* <img src={sideBanner} className="md:h-full w-[12%] md:ml-[80%] ml-[88%] h-36 absolute xl:ml-[68%] border-2 border-slate-600 shadow-lg shadow-slate-700"></img> */}
+    
       </div>
 
 

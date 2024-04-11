@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import advert from  "../../resources/advert.png"
+
 function Land() {
     return (
         <div className="w-full flex flex-col items-center justify-center ">
-            {/* <div>
-                <img src={advert} className="h-24 w-[35em]"></img>
-
-            </div> */}
+         
             <div>
                 <Link to="/start">
                     <button className="absolute w-[80%] md:w-[40%] lg:w-[30%]  ml-5 h-[20%] items-center justify-center mt-9 "></button>

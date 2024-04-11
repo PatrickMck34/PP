@@ -170,8 +170,7 @@ function Categories () {
               setSection2(newSection2);
             }
     }, [])});
-    useEffect(() => {
-    }, [])
+
     return (
         <div>
             {/* <img src={sunflower} alt="Sunflower" onClick={toggleTooltips} /> */}
@@ -191,7 +190,8 @@ function Categories () {
     </div>
                 {/* <div className="hidden  group-hover:block absolute top-0 left-0 border-2 border-black rounded-xl ml-5 bg-white text-black p-2  shadow-md shadow-slate-600">Psych Resources</div> */}
   </div>
-                
+            </div>
+            <div className="flex justify-center mt-5">  
                 <div className="group relative transition-delay-500 ">
                 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="Health" onClick={()=>update("Health")}>Health
                 <div className={`${showTooltips ? 'opacity-100' : 'opacity-0'} absolute top-0 left-0 border-2 border-black rounded-xl ml-5 bg-white text-black p-2 shadow-md shadow-slate-600 transition-opacity duration-500`}>Healthcare Resources</div>
@@ -202,8 +202,7 @@ function Categories () {
                 <div className={`${showTooltips ? 'opacity-100' : 'opacity-0'} absolute top-0 left-0 border-2 border-black rounded-xl ml-5 bg-white text-black p-2 shadow-md shadow-slate-600 transition-opacity duration-500`}>Crisis Resources</div>
                 </button>
                 </div>
-            </div>
-
+</div>
         </div>
     )
 }

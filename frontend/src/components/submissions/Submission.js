@@ -16,6 +16,8 @@ function Submission() {
     const Phone = submission.phone
     const City = submission.city
     const State = submission.state
+    const email = submission.email
+    const website = submission.website
     let Approved = result.Approved || false
     const user = useSelector(state => state.session.user)
     const Users = user?.username
@@ -61,7 +63,7 @@ function Submission() {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(ProviderActions.createProvider({
-           Name, Address, City, zipCode, Phone, State, Approved,
+           Name, Address, City, zipCode, Phone, State, Approved, email, website,
            Users,
            Email, webSite,
             domesticViolence,
@@ -122,6 +124,8 @@ function Submission() {
                 {City &&<p> " ," + " " + {City}</p>}
                 {zipCode && <p>zipCode Code: {zipCode}</p>}
                 {Phone && <p>Phone: {Phone}</p>}
+                {website && <p>Website: {webSite}</p>}
+                {email && <p>Email: {Email}</p>}
                 <span className="bg-teal-600 h-1 w-full mt-5 mb-2"></span>
                 <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
                 <span className="bg-teal-600 mt-2 h-1 w-full"></span>

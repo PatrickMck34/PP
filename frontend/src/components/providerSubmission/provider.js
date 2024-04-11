@@ -14,6 +14,8 @@ function Provider() {
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
+  const [email  , setEmail] = useState("");
+  const [website, setWebsite] = useState("");
   const [isProviderValid, setIsProviderValid] = useState(false);
   function handleNextSection() {
     const isValid = address !== '' && phone !== '' && name !== '' && zipCode !== '';
@@ -26,7 +28,7 @@ function Provider() {
   }
 
   useEffect(() => {
-    dispatch({ type: 'SET_ZIP', payload: { zipCode: zipCode, address: address, city: city, state: state, phone: phone, name: name } })
+    dispatch({ type: 'SET_ZIP', payload: { email: email, website: website, zipCode: zipCode, address: address, city: city, state: state, phone: phone, name: name } })
 
   }, [zipCode, name, address, phone])
   return (
@@ -58,6 +60,14 @@ function Provider() {
             <div className="bg-teal-600 flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
               <span>Zipcode</span>
               <input required type="text" placeHolder="Zipcode" value={zipCode} onChange={(e) => setZipCode(e.target.value)} className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " />
+            </div>
+            <div className="bg-teal-600 flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
+              <span>Email</span>
+              <input required type="text" placeHolder="Zipcode" value={email} onChange={(e) => setEmail(e.target.value)} className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " />
+            </div>
+            <div className="bg-teal-600 flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
+              <span>Website</span>
+              <input required type="text" placeHolder="Zipcode" value={website} onChange={(e) => setWebsite(e.target.value)} className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " />
             </div>
           </form>
 
