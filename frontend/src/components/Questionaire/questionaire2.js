@@ -21,10 +21,22 @@ function Questionaire2() {
 
   return (
     <div>
+      <div className="w-full flex ">
+<div className="flex flex-col ml-[70%] mb-[10%] w-full">Key:
+          <p className="h-3 w-3 bg-yellow-800"> <span className=" ml-4 ">
+              Legal
+              </span>
+              <p className="h-3 w-3 bg-slate-600"> <span className=" ml-4 ">Psychology</span>
+                  <p className="h-3 w-3 bg-teal-600"> <span className=" ml-4 ">Health</span>
+                      <p className="h-3 w-3 bg-slate-300"> <span className=" ml-4 ">Crisis</span>
 
-      <div className="w-full mr-auto flex ">
-        <HelpComponent currentSection={currentSection} />
+                      </p>
+                  </p>
+              </p>
+          </p>
       </div>
+    </div>
+        <HelpComponent currentSection={currentSection} />
       <div className="relative overflow-hidden h-full w-full">
         <CSSTransition
           in={currentSection === 1}
@@ -85,7 +97,7 @@ function Questionaire2() {
 
         </div>)}
         {(currentSection == 1) ? (
-        <div>
+          <div>
   
           <button onClick={Trans} className="font-serif  flex justify-center items-center w-60 mx-auto mt-12 px-4 py-2 bg-teal-400 border-2 text-2xl border-slate-400 text-slate-800  rounded-xl">Next</button>
       

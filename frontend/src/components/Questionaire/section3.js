@@ -146,6 +146,7 @@ function Section3() {
     }, [section3])
     return (
         <>
+        
             <h1 className="text-6xl font-serif justify-center flex mt-5">Last Step</h1>
             <span className="text-2xl font-serif justify-center flex mt-5">Resource Type</span>
             <div className="flex justify-center text-md mt-5">
@@ -154,7 +155,7 @@ function Section3() {
             </div>
             <div className="mt-1 flex justify-center text-md">
                 <button className=" bg-teal-600 border-2 border-teal-600 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="health" onClick={healthCenter}>Health Center</button>
-                <button className=" bg-teal-600 border-2 border-teal-700 h-20 mr-1 font-serif rounded-xl p-1 w-36" id="dv" onClick={dvProgram}>DV Program</button>
+                <button className=" bg-slate-600 border-2 border-teal-700 h-20 mr-1 font-serif rounded-xl p-1 w-36" id="dv" onClick={dvProgram}>DV Program</button>
 
                 <button className=" bg-slate-500 border-2 border-teal-600 mr-1 h-20 font-serif  rounded-xl p-1 w-36" id="psy" onClick={psychProgram}>Psych Program</button>
 
@@ -163,7 +164,7 @@ function Section3() {
             <div className="mt-1 flex justify-center text-md">
                 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="std" onClick={std}>STD</button>
                 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="hivSupport" onClick={hivSupport}>HIV Support</button>
-                <button className=" bg-teal-600 border-2 border-teal-700 h-20 font-serif rounded-xl p-1 w-36 text-md" id="advocacy" onClick={advocacyProgram}>Advocacy Program</button>
+                <button className=" bg-yellow-800 border-2 border-teal-700 h-20 font-serif rounded-xl p-1 w-36 text-md" id="advocacy" onClick={advocacyProgram}>Advocacy Program</button>
 
             </div>
             <div className="mt-1 flex justify-center text-md">
@@ -172,12 +173,12 @@ function Section3() {
 
 
 
-                <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="directCareCo" onClick={directCareCo}>Direct Care Co</button>
+                <button className="bg-slate-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="directCareCo" onClick={directCareCo}>Direct Care Co</button>
                 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="directCareMed" onClick={directCareMed}>Direct Care Med</button>
                 <button className="bg-yellow-800 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="legalAdvice" onClick={legalAdvice}>Legal Advice</button>
             </div>
             <div className="mt-1 flex justify-center text-xl">
-                <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="forensicExams" onClick={forensicExams}>Forensic Exams</button>
+                <button className="bg-yellow-800 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="forensicExams" onClick={forensicExams}>Forensic Exams</button>
                 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="generalHealth" onClick={generalHealth}>General Health</button>
                 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="pregnancy" onClick={pregnancy}>Pregnancy</button>
             </div>
@@ -196,7 +197,7 @@ function Section3() {
             <div className="flex justify-center mt-1 ">
                 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="tribal" onClick={tribal}>Tribal</button>
                 <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="coalition" onClick={coalition}>Coalition</button>
-                <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="missingPersons" onClick={missingPersons}>Missing Persons</button>
+                <button className="bg-yellow-800 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 h-20 font-serif rounded-xl p-1 w-36" id="missingPersons" onClick={missingPersons}>Missing Persons</button>
             </div>
             <div className="flex justify-center mt-1 ">
 

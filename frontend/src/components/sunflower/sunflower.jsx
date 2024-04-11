@@ -25,9 +25,9 @@ function HelpComponent({ currentSection }) {
   return (
     <div className="flex flex-col ">
 
-      <div className="flex flex-row p-2">
+      <div className="flex mt-[-20%] mb-10 flex-row p-2">
         {showHelp && (
-          <div className=" flex   text-sm font-semibold ">
+          <div className=" flex  text-sm font-semibold ">
             <h2 className="text-sm absolute ml-3  flex font-semibold text-teal-600">Persephone</h2>
           </div>
         )}

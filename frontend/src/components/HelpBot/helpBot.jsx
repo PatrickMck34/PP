@@ -47,13 +47,13 @@ function HelpBot({ currentSection }) {
             <h2 className="text-lg absolute items-center justify-center w-full flex font-semibold sunflower text-teal-600">Persephone</h2>
           </div>
         )}
-        <div className="justify-center items-center flex w-full mt-[10%] ">
+        <div className="justify-center items-center flex w-full  ">
 
           <img
             src={sunflower}
             alt="sunflower"
             ref={sunflowerRef}
-            className=" h-24 flex mt-3 justify-center items-center animate-move duration-5000 ease-in-out sunflower "
+            className=" h-24 flex  justify-center items-center animate-move duration-5000 ease-in-out sunflower "
             onClick={handleImageClick}
           />
         </div>
