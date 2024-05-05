@@ -47,7 +47,7 @@ function HelpBot({ currentSection }) {
             <h2 className="text-lg absolute items-center justify-center w-full flex font-semibold sunflower text-teal-600">Persephone</h2>
           </div>
         )}
-        <div className="justify-center items-center flex w-full  ">
+        <div className="justify-center items-center flex w-full mt-[6%] ">
 
           <img
             src={sunflower}

@@ -28,7 +28,7 @@ function Questionaire2() {
               </span>
               <p className="h-3 w-3 bg-slate-600"> <span className=" ml-4 ">Psychology</span>
                   <p className="h-3 w-3 bg-teal-600"> <span className=" ml-4 ">Health</span>
-                      <p className="h-3 w-3 bg-slate-300"> <span className=" ml-4 ">Crisis</span>
+                      <p className="h-3 w-3 bg-slate-400"> <span className=" ml-4 ">Crisis</span>
 
                       </p>
                   </p>
