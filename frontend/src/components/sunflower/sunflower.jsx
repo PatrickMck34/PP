@@ -28,13 +28,13 @@ function HelpComponent({ currentSection }) {
       <div className="flex mt-[-20%] mb-10 flex-row p-2">
         {showHelp && (
           <div className=" flex  text-sm  font-semibold ">
-            <h2 className="text-sm absolute ml-3  flex font-semibold text-teal-600">Persephone</h2>
+          
           </div>
         )}
         <img
           src={sunflower}
           alt="sunflower"
-          className=" flex mt-3  ml-5 max-h-14"
+          className=" flex  md:mt-16 ml-5 xl:mt-32 lg:h-24 2xl:mt-72 md:h-24 h-24 xl:h-24 "
           onClick={toggleTooltips}
         />
         {!showHelp && (

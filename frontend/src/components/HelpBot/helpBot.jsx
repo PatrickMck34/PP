@@ -38,36 +38,28 @@ function HelpBot({ currentSection }) {
   return (
 
 
-    <div className="flex flex-col ">
-
-
-      <div className="flex flex-row p-2">
-        {showHelp && (
-          <div className=" flex   text-sm font-semibold ">
-            <h2 className="text-lg absolute items-center justify-center w-full flex font-semibold sunflower text-teal-600">Persephone</h2>
-          </div>
-        )}
-        <div className="justify-center items-center flex w-full mt-[6%] ">
+     
+        <div className="justify-center items-center flex flex-col mt-[8%] w-full  ">
 
           <img
             src={sunflower}
             alt="sunflower"
             ref={sunflowerRef}
-            className=" h-24 flex  justify-center items-center animate-move duration-5000 ease-in-out sunflower "
+            className=" h-24 flex ml-6 animate-bounce justify-center items-center  "
             onClick={handleImageClick}
           />
-        </div>
-        {showMessage && (
-          <div className="flex mr-3 flex-col absolute  font-semibold w-fit mt-[40%] border-2 border-slate-900 bg-teal-700  text-pink-50 rounded-xl p-1 text-center">
+       
+       
+          <div className="flex mr-3 flex-col   font-semibold w-fit  border-2 border-slate-900 bg-teal-700  text-pink-50 rounded-xl p-1 text-center">
             <p>If you need help find the sunflower and Persephone will offer some guidance.</p>
             <Link to={"/help2"}>
 
               <button className="bg-teal-600 shadow-md border-2 border-teal-700 shadow-slate-400 mr-1 font-serif text-sm  mx-auto rounded-xl p-1  mt-5 mb-1 w-24">Got It!</button>
             </Link>
           </div>
-        )}
+    
 
-      </div>
+      
 
 
 
