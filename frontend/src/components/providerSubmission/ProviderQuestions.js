@@ -74,13 +74,14 @@ function ProviderQuestions() {
 
   const Trans = () => {
     setErrors([])
-    if (Address !== '' && Phone !== '' && Name !== '' && ZipCode !== '' && Phone.length === 10 && ZipCode.length === 5) {
-    setCurrentSection(currentSection + 1);
+    // if (Address !== '' && Phone !== '' && Name !== '' && ZipCode !== '' && Phone.length === 10 && ZipCode.length === 5) {
+      setCurrentSection((currentSection % 4) + 1);
 
 
 
 
-  };}
+  // }
+  ;}
 
   const Results = () => {
 

@@ -121,7 +121,7 @@ function Submission() {
             <div className="border-2 h-fit border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
                 {<p className="text-2xl justify-center flex items-center">{Name}</p>}
                 {Address && <p>Address: {Address}</p>}
-                {City &&<p> " ," + " " + {City}</p>}
+                {City &&<p> City: {City}, AZ</p>}
                 {zipCode && <p>zipCode Code: {zipCode}</p>}
                 {Phone && <p>Phone: {Phone}</p>}
                 {website && <p>Website: {webSite}</p>}

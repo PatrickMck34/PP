@@ -6,12 +6,16 @@ function Prolog() {
     const history = useNavigate()
     const user = useSelector(state => state.session.user)
     useEffect(() => {
+      if (user?.username === "admin") {
+       return history(`/admin/home`)
+  
+      }
         if (user?.username === "dataEntry") {
-            history(`/provider`)
+            return history(`/provider`)
       
           }
         if (user) {
-          history(`/user/admin/${user.id}`)
+         return history(`/user/admin/${user.id}`)
     
         }
       }, [user])

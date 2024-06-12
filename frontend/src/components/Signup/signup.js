@@ -18,6 +18,10 @@ function Signup() {
 		e.preventDefault();
 		setErrors([]);
 		const newUser = await dispatch(sessionActions.signup({ username, email, password }));
+		if (newUser.username === "admin") {
+			
+				history(`/admin/home`)
+		}
 		if (newUser) {
 		  history(`/user/admin/${user}`);
 		}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom"
 import * as sectionActions from "../../store/section.js"
+import * as providerActions from "../../store/provider.js"
 import FormatPhoneNumber from '../Phone/formatPhone';
 function UserAdmin() {
   const dispatch = useDispatch()
@@ -12,10 +13,12 @@ function UserAdmin() {
   const phone = useSelector((state) => state.provider?.phone)
   const providers = useSelector((state) => state.section?.allSections)
   const user = useSelector(state => state.session?.user)
-  let data = Object.values(submission);
+
+  let data = Object.values(providers);
+
 
   useEffect(() => {
-    dispatch(sectionActions.getProviders(user.id))
+    dispatch(sectionActions.getAllProviders())
 
 }, [])
   return (
@@ -23,7 +26,7 @@ function UserAdmin() {
       <div className=" mt-5 h-fit rounded-xl mb-2 border-2 border-slate-700 bg-teal-600 w-full mx-auto flex flex-col text-center justify-center text-2xl text-pink-50">
         Approved
        {data?.map((provider) => (
-        <div>
+         <div>
 
       {provider.Approved === true && provider.Users === user.username &&
                             <div key={provider?.id} className="border-2 rounded-xl border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
@@ -41,15 +44,18 @@ function UserAdmin() {
                                         </div>
       
       
-}</div>
-      ))}
-      </div>
+    }</div>
+  ))}
       <div className="border-2 h-fit border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
-        {<p className="text-2xl justify-center flex items-center">{submission.name}</p>}
-        {address && <p>Address: {submission.address}</p>}
-        {zip && <p>Zip Code: {submission.zip}</p>}
-     
-        <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
+        {<p className="text-2xl justify-center flex items-center">{submission?.name}</p>}
+        {address && <p>Address: {submission?.address}</p>}
+        {zip && <p>Zip Code: {submission?.zip}</p>}
+     {submission && submission?.length > 0 ? (
+       <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
+     ):(
+<div></div>
+     )
+     }
     
 
         <span className="text-black  flex-col grid grid-cols-2
@@ -63,6 +69,7 @@ function UserAdmin() {
 
         </span>
       </div>
+      </div>
       <div className="w-full flex items-center justify-center">
 
       </div>
@@ -73,7 +80,7 @@ function UserAdmin() {
       {data?.map((provider) => (
         <div>
 
-      {provider.Approved === false && provider.Users === user.username &&
+      {provider?.Approved === false  && (provider?.Users === user.username) &&
                             <div key={provider?.id} className="border-2 rounded-xl border-teal-900 bg-teal-100/70 mt-1 xl:mt-4 md:mx-[10%]   p-1">
                                 <div className="">
                                     <div className=" h-fit  border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
@@ -91,12 +98,17 @@ function UserAdmin() {
       
 }</div>
       ))}
-      <div className="border-2 h-fit border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
+      <div className=" h-fit  w-full flex flex-col p-4 justify-center items-center mr-5">
         {<p className="text-2xl justify-center flex items-center">{name}</p>}
-        {address && <p>Address: {submission.address}</p>}
+        {address && <p>Address: {submission?.address}</p>}
         {zip && <p>Zip Code: {zip}</p>}
-     
-        <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
+        {data && data?.length > 0 ? (
+       <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
+     ):(
+<div></div>
+     )
+     }
+       
       
 
         <span className="text-black  flex-col grid grid-cols-2

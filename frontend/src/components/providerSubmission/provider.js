@@ -43,31 +43,31 @@ function Provider() {
 
             <div className="bg-teal-600 flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
               <span>Name</span>
-              <input required className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " type="text" value={name} placeHolder="Name of Company" onChange={(e) => setName(e.target.value)} />
+              <input required className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " type="text" value={name} placeholder="Name of Company" onChange={(e) => setName(e.target.value)} />
             </div>
             <div className="bg-teal-600 text-center flex flex-col items-center font-serif shadow-md shadow-slate-400  w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
 
               <span>Address</span>
-              <input required className="w-36  p-2 text-sm mt-1 border-2 h-8 border-gray-400 " type="address" value={address} placeHolder="Street Address" onChange={(e) => setAddress(e.target.value)} />
-              <input required className="w-36  p-2 text-sm mt-1 border-2 h-8 border-gray-400 " type="address" value={city} placeHolder="City" onChange={(e) => setCity(e.target.value)} />
-              <input required className="w-36  p-2 text-sm mt-1 border-2 h-8 border-gray-400 " type="address" value={state} placeHolder="State" onChange={(e) => setState(e.target.value)} />
+              <input required className="w-36  p-2 text-sm mt-1 border-2 h-8 border-gray-400 " type="address" value={address} placeholder="Street Address" onChange={(e) => setAddress(e.target.value)} />
+              <input required className="w-36  p-2 text-sm mt-1 border-2 h-8 border-gray-400 " type="address" value={city} placeholder="City" onChange={(e) => setCity(e.target.value)} />
+              <input required className="w-36  p-2 text-sm mt-1 border-2 h-8 border-gray-400 " type="address" value={state} placeholder="State" onChange={(e) => setState(e.target.value)} />
             </div>
             <div className="bg-teal-600 flex  flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
               <span>Phone</span>
               <input required className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " type="phone" value={phone}
-                placeHolder="10-digit Phone#" onChange={(e) => setPhone(e.target.value)} />
+                placeholder="10-digit Phone#" onChange={(e) => setPhone(e.target.value)} />
             </div>
             <div className="bg-teal-600 flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
               <span>Zipcode</span>
-              <input required type="text" placeHolder="Zipcode" value={zipCode} onChange={(e) => setZipCode(e.target.value)} className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " />
+              <input required type="text" placeholder="Zipcode" value={zipCode} onChange={(e) => setZipCode(e.target.value)} className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " />
             </div>
             <div className="bg-teal-600 flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
               <span>Email</span>
-              <input required type="text" placeHolder="Zipcode" value={email} onChange={(e) => setEmail(e.target.value)} className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " />
+              <input required type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " />
             </div>
             <div className="bg-teal-600 flex flex-col items-center text-center font-serif shadow-md shadow-slate-400 h-24 w-60 text-2xl p-1 justify-center rounded-2xl mt-2">
               <span>Website</span>
-              <input required type="text" placeHolder="Zipcode" value={website} onChange={(e) => setWebsite(e.target.value)} className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " />
+              <input required type="text" placeholder="Website" value={website} onChange={(e) => setWebsite(e.target.value)} className="w-36 text-sm p-2  mt-1 border-2 h-8 border-gray-400 " />
             </div>
           </form>
 
