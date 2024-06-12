@@ -16,15 +16,16 @@ function UserAdmin() {
 
   let data = Object.values(providers);
 
-
+  
   useEffect(() => {
     dispatch(sectionActions.getAllProviders())
-
-}, [])
+    
+  }, [])
   return (
     <div className="">
-      <div className=" mt-5 h-fit rounded-xl mb-2 border-2 border-slate-700 bg-teal-600 w-full mx-auto flex flex-col text-center justify-center text-2xl text-pink-50">
+    <div className=" mt-5 h-fit rounded-xl mb-2 border-2 border-slate-700 bg-teal-600 w-full mx-auto flex flex-col text-center justify-center text-2xl text-pink-50">
         Approved
+    </div>
        {data?.map((provider) => (
          <div>
 
@@ -33,20 +34,21 @@ function UserAdmin() {
                                 <div className="">
                                     <div className=" h-fit  border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
                                         {<p className="text-3xl font-semibold mb-3 justify-center flex items-center lg:text-4xl text-center">{provider?.Name}</p>}
-                                        {provider?.Address && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.Address}</p>}
-                                        {provider?.City && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.City}</p>}
-                                        {provider?.State && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.State}</p>}
+                                        {provider?.Address && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3">Address: {provider?.Address}</p>}
+                                        {provider?.City && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3">  {provider?.City + ", "}{provider?.State} </p>}
+
                                         {provider?.zipCode && <p className="font-semibold lg:text-2xl text-center mb-1"> {provider?.zipCode}</p>}
                                         {provider?.Phone && <p className="font-semibold text-xl">Phone: {FormatPhoneNumber(provider?.Phone)}</p>}
                                         </div>
                                         </div>
       
+      
+      
                                         </div>
-      
-      
-    }</div>
+    }
+    </div>
   ))}
-      <div className="border-2 h-fit border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
+      <div className="h-fit w-full flex flex-col p-4 justify-center items-center mr-5">
         {<p className="text-2xl justify-center flex items-center">{submission?.name}</p>}
         {address && <p>Address: {submission?.address}</p>}
         {zip && <p>Zip Code: {submission?.zip}</p>}
@@ -69,7 +71,6 @@ function UserAdmin() {
 
         </span>
       </div>
-      </div>
       <div className="w-full flex items-center justify-center">
 
       </div>
@@ -85,10 +86,10 @@ function UserAdmin() {
                                 <div className="">
                                     <div className=" h-fit  border-teal-600 w-full flex flex-col p-4 justify-center items-center mr-5">
                                         {<p className="text-3xl font-semibold mb-3 justify-center flex items-center lg:text-4xl text-center">{provider?.Name}</p>}
-                                        {provider?.Address && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.Address}</p>}
-                                        {provider?.City && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.City}</p>}
-                                        {provider?.State && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3"> {provider?.State}</p>}
-                                        {provider?.zipCode && <p className="font-semibold lg:text-2xl text-center mb-1"> {provider?.zipCode}</p>}
+                                        {provider?.Address && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3">Address: {provider?.Address}</p>}
+                                        {provider?.City && <p className="font-semibold lg:text-2xl text-center mb-1 mt-3">  {provider?.City + ", "}{provider?.State} </p>}
+
+                                        {provider?.zipCode && <p className="font-semibold lg:text-2xl text-center mb-1">Zipcode: {provider?.zipCode}</p>}
                                         {provider?.Phone && <p className="font-semibold text-xl">Phone: {FormatPhoneNumber(provider?.Phone)}</p>}
                                         </div>
                                         </div>
@@ -102,12 +103,12 @@ function UserAdmin() {
         {<p className="text-2xl justify-center flex items-center">{name}</p>}
         {address && <p>Address: {submission?.address}</p>}
         {zip && <p>Zip Code: {zip}</p>}
-        {data && data?.length > 0 ? (
+        {/* {data && data?.length > 0 ? (
        <h1 className="bg-teal-600 text-pink-50 border-2 rounded p-1 w-full items-center justify-center flex border-slate-700">Expertise</h1>
      ):(
 <div></div>
-     )
-     }
+     ) */}
+     {/* } */}
        
       
 
